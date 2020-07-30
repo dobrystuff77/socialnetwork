@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "./axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
-import { Link } from "react-router-dom";
 
 export default class Profile extends React.Component {
     constructor(props) {

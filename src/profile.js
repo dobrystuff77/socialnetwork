@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "./axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
 import { Link } from "react-router-dom";
-import BioEditor from "./BioEditor";
+import BioEditor from "./bioeditor";
 import SmallPictures from "./smallpictures";
 import Friends from "./friends";
 import { Chat } from "./chat.js";
