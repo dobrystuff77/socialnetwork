@@ -32,13 +32,13 @@ export default class Profile extends React.Component {
             });
     }
 
-    editTrue(e) {
+    editTrue() {
         console.log("click editTrue");
         this.setState({
             edit: true
         });
     }
-    editFalse(e) {
+    editFalse() {
         console.log("click editTrue");
         this.setState({
             edit: false
