@@ -1,3 +1,13 @@
+const db = require("./db");
+const bcrypt = require("./bcrypt");
+const csurf = require("csurf");
+const express = require("express");
+const app = express();
+const compression = require("compression");
+const cookieSession = require("cookie-session");
+const cryptoRandomString = require("crypto-random-string");
+const ses = require("./ses");
+const path = require("path");
 ////////////////////////////////////////////////////////////////////////////////
 //UPLOAD
 const s3 = require("./s3");
@@ -6,7 +16,50 @@ const { s3Url } = require("./config");
 // UPLOAD CODE
 const multer = require("multer");
 const uidSafe = require("uid-safe");
-const path = require("path");
+const server = require("http").Server(app);
+const io = require("socket.io")(server, { origins: "localhost:8080" });
+let secrets;
+let onlineUsers = {};
+
+if (process.env.NODE_ENV != "production") {
+    app.use(
+        "/bundle.js",
+        require("http-proxy-middleware")({
+            target: "http://localhost:8081/"
+        })
+    );
+} else {
+    app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
+}
+
+if (process.env.NODE_ENV === "production") {
+    secrets = process.env;
+} else {
+    secrets = require("./secrets.json");
+}
+
+app.use(compression());
+app.use(express.json());
+app.use(express.static("./public"));
+app.use(express.static("./sql"));
+
+const cookieSessionMiddleware = cookieSession({
+    secret: `secrets`,
+    maxAge: 1000 * 60 * 60 * 24 * 90
+});
+
+app.use(cookieSessionMiddleware);
+
+io.use(function(socket, next) {
+    cookieSessionMiddleware(socket.request, socket.request.res, next);
+});
+
+app.use(csurf());
+
+app.use(function(req, res, next) {
+    res.cookie("mytoken", req.csrfToken());
+    next();
+});
 
 const diskStorage = multer.diskStorage({
     destination: function(req, file, callback) {
@@ -25,41 +78,13 @@ const uploader = multer({
         fileSize: 2097152
     }
 });
-////////////////////////////////////////////////////////////////////////////////
-//CREATING CODE
-const cryptoRandomString = require("crypto-random-string");
-
-///////////////////////////////////////////////////////////////////////////////
-//SENDING EMAIL
-const ses = require("./ses");
-///////////////////////////////////////////////////////////////////////////////
-const db = require("./db");
-///////////////////////////////////////////////////////////////////////////////
-//EXPRESS
-const express = require("express");
-const app = express();
-
-if (process.env.NODE_ENV != "production") {
-    app.use(
-        "/bundle.js",
-        require("http-proxy-middleware")({
-            target: "http://localhost:8081/"
-        })
-    );
-} else {
-    app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
-}
-
-app.use(express.static("./public"));
-app.use(express.static("./sql"));
 
 //////////////////////////////////////////////////////////////////////////////
 // require encryption
-const bcrypt = require("./bcrypt");
+
 ////////////////////////////////////////////////////////////////////////////////
 //COMPRESSION
-const compression = require("compression");
-app.use(compression());
+
 ////////////////////////////////////////////////////////////////////////////////
 // SOCKET
 
@@ -76,31 +101,13 @@ app.use(compression());
 // );
 ///////////////////////////////////////////////////////////////////////////////
 // SOCKET IO
-let onlineUsers = {};
-const server = require("http").Server(app);
-const io = require("socket.io")(server, { origins: "localhost:8080" });
+
 ////////////////////////////////////////////////////////////////////////////////
 // NEW COOKIE for SOCKET IO
-const cookieSession = require("cookie-session");
-const cookieSessionMiddleware = cookieSession({
-    secret: `secrets`,
-    maxAge: 1000 * 60 * 60 * 24 * 90
-});
 
-app.use(cookieSessionMiddleware);
-io.use(function(socket, next) {
-    cookieSessionMiddleware(socket.request, socket.request.res, next);
-});
-app.use(express.json());
-///////////////////////////////////////////////////////////////////////////////
-const csurf = require("csurf");
-app.use(csurf());
 ///////////////////////////////////////////////////////////////////////////////
 
-app.use(function(req, res, next) {
-    res.cookie("mytoken", req.csrfToken());
-    next();
-});
+///////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
 
