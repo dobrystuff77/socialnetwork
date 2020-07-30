@@ -25,7 +25,6 @@ const uploader = multer({
         fileSize: 2097152
     }
 });
-///////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 //CREATING CODE
 const cryptoRandomString = require("crypto-random-string");
@@ -39,8 +38,21 @@ const db = require("./db");
 //EXPRESS
 const express = require("express");
 const app = express();
+
+if (process.env.NODE_ENV != "production") {
+    app.use(
+        "/bundle.js",
+        require("http-proxy-middleware")({
+            target: "http://localhost:8081/"
+        })
+    );
+} else {
+    app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
+}
+
 app.use(express.static("./public"));
 app.use(express.static("./sql"));
+
 //////////////////////////////////////////////////////////////////////////////
 // require encryption
 const bcrypt = require("./bcrypt");
@@ -50,7 +62,7 @@ const compression = require("compression");
 app.use(compression());
 ////////////////////////////////////////////////////////////////////////////////
 // SOCKET
-let onlineUsers = {};
+
 ////////////////////////////////////////////////////////////////////////////////
 //COOKIE
 // const cookieSession = require("cookie-session");
@@ -64,6 +76,7 @@ let onlineUsers = {};
 // );
 ///////////////////////////////////////////////////////////////////////////////
 // SOCKET IO
+let onlineUsers = {};
 const server = require("http").Server(app);
 const io = require("socket.io")(server, { origins: "localhost:8080" });
 ////////////////////////////////////////////////////////////////////////////////
@@ -90,16 +103,7 @@ app.use(function(req, res, next) {
 });
 
 ////////////////////////////////////////////////////////////////////////////////
-if (process.env.NODE_ENV != "production") {
-    app.use(
-        "/bundle.js",
-        require("http-proxy-middleware")({
-            target: "http://localhost:8081/"
-        })
-    );
-} else {
-    app.use("/bundle.js", (req, res) => res.sendFile(`${__dirname}/bundle.js`));
-}
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////DO NOT TOUCH////////////////////////////////////////////
