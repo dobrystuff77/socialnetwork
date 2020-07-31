@@ -81,7 +81,11 @@ export default class App extends React.Component {
                         alingItems: "center"
                     }}
                 >
-                    <img src="/progressbar.gif" alt="Loading..." />
+                    <img
+                        src="/progressbar.gif"
+                        alt="Loading..."
+                        style={{ width: "100px" }}
+                    />
                 </div>
             );
         }
