@@ -12,7 +12,7 @@ export default class Uploader extends React.Component {
             [e.target.name]: e.target.files[0]
         });
     }
-    closeX(e) {
+    closeX() {
         this.props.invisibleUploader();
         console.log("closeX");
     }
@@ -43,26 +43,23 @@ export default class Uploader extends React.Component {
     render() {
         return (
             <div className="uploader">
-                <div className="containeruploader">
-                    <div className="flex">
-                        <form>
-                            <input
-                                name="file"
-                                type="file"
-                                accept="image/*"
-                                className="choosepic"
-                                onChange={e => this.takeFile(e)}
-                            />
-                            <button onClick={e => this.clickHandler(e)}>
-                                submit
-                            </button>
-                        </form>
-                    </div>
-                </div>
                 <div className="x">
                     <div onClick={e => this.closeX(e)} className="xclose">
                         <div className="close"></div>
                     </div>
+                </div>
+
+                <div className="uploader-container">
+                    <div className="upload-text">Upload Profile Picture</div>
+                    {/*<input
+                        name="file"
+                        type="file"
+                        accept="image/*"
+                        className="choosepic"
+                        onChange={e => this.takeFile(e)}
+                    />
+                    <button onClick={e => this.clickHandler(e)}>submit</button>
+*/}
                 </div>
             </div>
         );

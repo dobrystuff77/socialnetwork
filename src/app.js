@@ -71,7 +71,19 @@ export default class App extends React.Component {
     render() {
         // console.log("this.state: ", this.state.id);
         if (!this.state.id) {
-            return <img src="/progressbar.gif" alt="Loading..." />;
+            return (
+                <div
+                    style={{
+                        width: "100%",
+                        height: "100vh",
+                        display: "flex",
+                        justifyContent: "center",
+                        alingItems: "center"
+                    }}
+                >
+                    <img src="/progressbar.gif" alt="Loading..." />
+                </div>
+            );
         }
         return (
             <BrowserRouter>
