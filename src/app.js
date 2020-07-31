@@ -228,45 +228,42 @@ export default class App extends React.Component {
                         )}
                     </div>
 */}
-                    {/*
-                        <Route path="/users" component={Users} />
-                        <Route path="/pictures" component={Pictures} />
-                        <Route path="/user/:id" component={OtherProfile} />
-                        <Route path="/friends" component={Friends} />
-                        <Route
-                            path="/picturesuser/:id"
-                            component={PicturesUser}
-                        />
-                        <Route path="/chat" component={Chat} />
-                        <div className="profile">
-                            <div className="underheader">
-                                <Route
-                                    exact
-                                    path="/"
-                                    render={() => (
-                                        <Profile
-                                            picture_url={this.state.picture_url}
-                                            first={this.state.first}
-                                            last={this.state.last}
-                                            bio={this.state.bio}
-                                            editBio={bio =>
-                                                this.setState({ bio: bio })
-                                            }
-                                            addBio={() =>
-                                                this.setState({
-                                                    profileInvisible: true
-                                                })
-                                            }
-                                            invisibleUploader={() =>
-                                                this.setState({
-                                                    uploaderIsVisible: true
-                                                })
-                                            }
-                                        />
-                                    )}
-                                />
-                            </div>
-                        </div>*/}
+
+                    {/*<Route path="/users" component={Users} />
+                    <Route path="/pictures" component={Pictures} />
+                    <Route path="/user/:id" component={OtherProfile} />
+                    <Route path="/friends" component={Friends} />
+                    <Route path="/picturesuser/:id" component={PicturesUser} />
+                    <Route path="/chat" component={Chat} />
+                    <div className="profile">
+                        <div className="underheader">
+                            <Route
+                                exact
+                                path="/"
+                                render={() => (
+                                    <Profile
+                                        picture_url={this.state.picture_url}
+                                        first={this.state.first}
+                                        last={this.state.last}
+                                        bio={this.state.bio}
+                                        editBio={bio =>
+                                            this.setState({ bio: bio })
+                                        }
+                                        addBio={() =>
+                                            this.setState({
+                                                profileInvisible: true
+                                            })
+                                        }
+                                        invisibleUploader={() =>
+                                            this.setState({
+                                                uploaderIsVisible: true
+                                            })
+                                        }
+                                    />
+                                )}
+                            />
+                        </div>
+                    </div>*/}
                 </React.Fragment>
             </BrowserRouter>
         );

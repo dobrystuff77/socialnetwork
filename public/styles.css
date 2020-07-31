@@ -174,8 +174,8 @@ textarea {
     /* padding-top: 5px;
     padding-bottom: 5px; */
 
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 20px;
+    /* padding-right: 120px; */
     border-bottom: 1px solid #dedfe0;
     margin-top: 5px;
     /* background-color: #007c00; */
@@ -231,7 +231,7 @@ textarea {
 }
 
 .header-icons-container {
-    min-width: 300px;
+    width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -277,6 +277,27 @@ textarea {
 
 .nameheader a {
     margin-bottom: 8px;
+}
+
+@media (max-width: 400px) {
+    .smalltreelogo {
+        height: 30px;
+    }
+
+    .display {
+        display: none;
+    }
+
+    .header-icon {
+        /* margin-top: 15px; */
+        width: 30px;
+        margin: 15px;
+    }
+
+    .flex {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 /* //////////////////////////////

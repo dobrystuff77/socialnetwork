@@ -43,7 +43,7 @@ export default class ProfilePic extends React.Component {
                     )}
                 </div>
                 <div
-                    className="nameheader"
+                    className="nameheader display"
                     onClick={() => this.backToProfile()}
                 >
                     <a href="#" className="ahref">
