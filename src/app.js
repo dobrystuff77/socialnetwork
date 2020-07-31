@@ -75,17 +75,12 @@ export default class App extends React.Component {
                 <div
                     style={{
                         width: "100%",
-                        height: "100vh",
-                        display: "flex",
-                        justifyContent: "center",
-                        alingItems: "center"
+                        height: "100vh"
                     }}
                 >
-                    <img
-                        src="/progressbar.gif"
-                        alt="Loading..."
-                        style={{ width: "100px" }}
-                    />
+                    <div>
+                        <img src="/progressbar.gif" alt="Loading..." />
+                    </div>
                 </div>
             );
         }
