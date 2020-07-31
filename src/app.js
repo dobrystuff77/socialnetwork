@@ -67,9 +67,7 @@ export default class App extends React.Component {
         // console.log("allUsers method");
         location.replace("/users");
     }
-
     render() {
-        // console.log("this.state: ", this.state.id);
         if (!this.state.id) {
             return (
                 <div
@@ -246,7 +244,7 @@ export default class App extends React.Component {
                     <Route path="/friends" component={Friends} />
                     <Route path="/picturesuser/:id" component={PicturesUser} />
                     <Route path="/chat" component={Chat} />
-                    {/*<div className="profile">
+                    <div className="profile">
                         <div className="underheader">
                             <Route
                                 exact
@@ -274,7 +272,7 @@ export default class App extends React.Component {
                                 )}
                             />
                         </div>
-                    </div>*/}
+                    </div>
                 </React.Fragment>
             </BrowserRouter>
         );

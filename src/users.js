@@ -48,7 +48,6 @@ export default function Users() {
         setUser(target.value);
     };
 
-    // console.log("users: ", countries);
     return (
         <div className="usersmaincontainer">
             <input
@@ -70,20 +69,20 @@ export default function Users() {
                                 onClick={() => showProfile(user.id)}
                             >
                                 {user.picture_url && (
-                                    <>
+                                    <div className="userpicture-container">
                                         <img
                                             src={user.picture_url}
                                             className="userpicture"
                                         />
-                                    </>
+                                    </div>
                                 )}
                                 {!user.picture_url && (
-                                    <>
+                                    <div className="userpicture-container">
                                         <img
                                             src="./default.jpg"
                                             className="userpicture"
                                         />
-                                    </>
+                                    </div>
                                 )}
                                 <div className="usersfirstlast">
                                     {user.first} {user.last}
