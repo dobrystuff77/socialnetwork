@@ -33,11 +33,11 @@ export default class Uploader extends React.Component {
         axios
             .post("/upload", formData)
             .then(result => {
+                this.props.setImageUrl(result.data.picture_url);
                 this.setState({
                     loading: false
                 });
                 this.closeX(e);
-                this.props.setImageUrl(result.data.picture_url);
             })
             .catch(err => {
                 console.log("err in post axios: ", err);
