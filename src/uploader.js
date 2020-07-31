@@ -83,6 +83,21 @@ export default class Uploader extends React.Component {
                             >
                                 submit
                             </button>
+                            aaaaaa
+                            <input
+                                name="file"
+                                type="file"
+                                accept="image/*"
+                                className="choosepic"
+                                onChange={e => this.takeFile(e)}
+                            />
+                            <button
+                                onClick={e => this.clickHandler(e)}
+                                className="btn"
+                            >
+                                test
+                            </button>
+                            aaaaaaaaaaaaa
                         </>
                     )}
                 </div>
