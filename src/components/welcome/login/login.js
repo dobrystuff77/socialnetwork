@@ -1,9 +1,11 @@
 import React from "react";
-import axios from "./axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
+// import axios from "../../../axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
 import { Link } from "react-router-dom";
 
-import { useStatefulFields } from "../hooks/useStatefulFields";
-import { useAuthSubmit } from "../hooks/useAuthSubmit";
+import { useStatefulFields } from "../../../../hooks/useStatefulFields";
+import { useAuthSubmit } from "../../../../hooks/useAuthSubmit";
+
+// import classes from "./login.modules.css";
 
 export default function Login() {
     const [values, handleChange] = useStatefulFields();
@@ -26,8 +28,12 @@ export default function Login() {
                 onChange={handleChange}
                 placeholder="password"
             />
-            <button onClick={handleSubmit}>submit</button>
-            <Link to="/reset">Reset password</Link>
+            <button className="register-button" onClick={handleSubmit}>
+                submit
+            </button>
+            <div className="register-button">
+                <Link to="/reset">reset password</Link>
+            </div>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Welcome from "./welcome";
+import Welcome from "./components/welcome/welcome";
 import App from "./app";
 ///////////////////////////////////////////////////////////////////////////////
 // REDUX

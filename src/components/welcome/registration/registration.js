@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "./axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
+import axios from "../../../axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
 import { Link } from "react-router-dom";
 
 export default class Registration extends React.Component {
@@ -73,9 +73,14 @@ export default class Registration extends React.Component {
                     placeholder="password"
                     type="password"
                 />
-                <button onClick={e => this.submit()}>register</button>
-                <div>
-                    <Link to="/login">Click here to Log in!</Link>
+                <button
+                    className="register-button"
+                    onClick={() => this.submit()}
+                >
+                    register
+                </button>
+                <div className="register-button">
+                    <Link to="/login">log in!</Link>
                 </div>
             </div>
         );

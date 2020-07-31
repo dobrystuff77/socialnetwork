@@ -1,22 +1,21 @@
 * {
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 body {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    /* min-height: 100vh; */
-    /* background-color: #77dd77; */
-    margin: 0px;
-    padding: 0px;
+    width: 100%; */
 }
 
 main {
-    width: 100%;
-    min-height: 100vh;
+    /* width: 100%; */
+    /* min-height: 100vh; */
 }
 
 a {
@@ -26,13 +25,11 @@ a {
 
 input {
     border: 1px solid #dedfe0;
-    /* -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.75); */
     margin: 3px;
     border-radius: 10px;
     text-align: center;
     height: 25px;
+    width: 200px;
 }
 
 textarea {
@@ -40,22 +37,26 @@ textarea {
 }
 /* /////////////////////////////////////////////////////////////////////////// */
 /* //REGISTER */
-.main {
-    /* border: 8px solid #77dd77; */
+.register-container {
+    /* border: 8px solid black; */
     background-color: white;
     width: 100%;
     min-height: 100vh;
-}
-
-.wetreenow {
-    font-size: 90px;
-    font-size: bold;
-    color: #8cc63e;
-    /* border: 3px solid silver; */
-    height: 110px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.simplenetwork {
+    font-size: 70px;
+    font-size: bold;
+    /* border: 3px solid silver; */
+    /* height: 110px; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 25px;
 }
 .treelogocontainer {
     height: 180px;
@@ -74,7 +75,7 @@ textarea {
 .container {
     /* border: 4px solid purple; */
     width: 100%;
-    min-height: 30vh;
+    /* min-height: 30vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,24 +83,74 @@ textarea {
 }
 .inputs {
     width: 100%;
-    min-height: 35vh;
+    /* min-height: 35vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: 2px solid yellow; */
 }
+
+.register-button {
+    border: 0px solid #dedfe0;
+    margin: 3px;
+    border-radius: 10px;
+    text-align: center;
+    height: 25px;
+    background: black;
+    color: white;
+    width: 200px;
+}
+
+.register-button a {
+    color: white;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .simplenetwork {
+        font-size: 51px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .simplenetwork {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 400px) {
+    .simplenetwork {
+        font-size: 37px;
+    }
+}
+
+@media (max-width: 300px) {
+    .simplenetwork {
+        font-size: 35px;
+    }
+}
+
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* //RESET */
 .resettext {
-    color: white;
-    font-size: 20px;
+    /* color: black; */
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 .resetinputs {
     display: flex;
     flex-direction: column;
     /* width: 100%; */
     height: 100%;
+}
+
+.link {
+    justify-content: center;
+    align-items: center;
 }
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* //LOGIN */

@@ -1,11 +1,11 @@
 import React from "react";
-import axios from "./axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
+import axios from "../../../axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
 import { Link } from "react-router-dom";
 
 export default class Reset extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = { error: false };
     }
     handleChange(e) {
         // to samo inaczej this[e.target.name] = e.target.value;
@@ -65,7 +65,8 @@ export default class Reset extends React.Component {
                 console.log("data.data.success: ", data.data.success);
                 if (data.data.success) {
                     this.setState({
-                        step: 3
+                        step: 3,
+                        error: false
                     });
                     console.log("change password succes: true");
                 } else {
@@ -93,7 +94,13 @@ export default class Reset extends React.Component {
                             onChange={e => this.handleChange(e)}
                             placeholder="email"
                         />
-                        <button onClick={e => this.submit()}>Log in</button>
+
+                        <button
+                            className="register-button"
+                            onClick={() => this.submit()}
+                        >
+                            submit
+                        </button>
                     </div>
                 )}
                 {this.state.step == 2 && (
@@ -108,16 +115,24 @@ export default class Reset extends React.Component {
                             name="newpass"
                             onChange={e => this.handleChange(e)}
                             placeholder="newpass"
+                            type="password"
                         />
-                        <button onClick={e => this.changePass()}>Change</button>
+                        <button
+                            className="register-button"
+                            onClick={() => this.changePass()}
+                        >
+                            Change Password
+                        </button>
                     </div>
                 )}
                 {this.state.step == 3 && (
                     <div className="link">
                         <div className="resettext">
-                            Successful Password Reset
+                            Successful Password Reset!
                         </div>
-                        <Link to="/login">Click here to log in!</Link>
+                        <div className="register-button">
+                            <Link to="/login">Click here to log in!</Link>
+                        </div>
                     </div>
                 )}
             </div>

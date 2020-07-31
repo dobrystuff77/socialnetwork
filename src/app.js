@@ -54,7 +54,7 @@ export default class App extends React.Component {
         // console.log("logout method");
         axios
             .get("/logout")
-            .then(({ data }) => {
+            .then(() => {
                 // console.log("AXIOS GET/logout");
                 location.replace("/");
             })
@@ -151,6 +151,83 @@ export default class App extends React.Component {
                                 />
                             )}
                         </div>
+
+                        <div className="header">
+                            <div className="inheaderl">
+                                <div className="flex">
+                                    <img
+                                        src="/tree.svg"
+                                        className="smalltreelogo"
+                                    />
+                                </div>
+                                <div className="smallwetreenow">
+                                    somenetwork
+                                </div>
+                            </div>
+                            <div className="inheaderp">
+                                <ProfilePic
+                                    clickHandler={() =>
+                                        this.setState({
+                                            uploaderIsVisible: true
+                                        })
+                                    }
+                                    picture_url={this.state.picture_url}
+                                    first={this.state.first}
+                                    last={this.state.last}
+                                />
+
+                                <div
+                                    className="logout"
+                                    onClick={e => this.allUsers(e)}
+                                >
+                                    <a href="#" className="ahref">
+                                        Users
+                                    </a>
+                                </div>
+
+                                <div className="pureflex">
+                                    <div className="arrcontainer">
+                                        <img
+                                            src="/arrdown.svg"
+                                            className="arrdown"
+                                        />
+                                    </div>
+                                    <div className="dropdown-menu">
+                                        <a
+                                            href="#"
+                                            onClick={e => this.logOut(e)}
+                                        >
+                                            Logout
+                                        </a>
+                                        <a href="#">Shop</a>
+                                        <a href="#">Charity</a>
+                                        <a href="#">Edit profile</a>
+                                        <a
+                                            href="#"
+                                            onClick={() =>
+                                                location.replace("/pictures")
+                                            }
+                                        >
+                                            Pictures
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {this.state.uploaderIsVisible && (
+                                <Uploader
+                                    setImageUrl={picture_url =>
+                                        this.setState({ picture_url })
+                                    }
+                                    invisibleUploader={() =>
+                                        this.setState({
+                                            uploaderIsVisible: false
+                                        })
+                                    }
+                                />
+                            )}
+                        </div>
+
+                        {/*
                         <Route path="/users" component={Users} />
                         <Route path="/pictures" component={Pictures} />
                         <Route path="/user/:id" component={OtherProfile} />
@@ -188,7 +265,7 @@ export default class App extends React.Component {
                                     )}
                                 />
                             </div>
-                        </div>
+                        </div>*/}
                     </React.Fragment>
                 </BrowserRouter>
             </div>
