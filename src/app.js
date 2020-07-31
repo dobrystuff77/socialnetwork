@@ -74,160 +74,161 @@ export default class App extends React.Component {
             return <img src="/progressbar.gif" alt="Loading..." />;
         }
         return (
-            <div className="loggedincontainer">
-                <BrowserRouter>
-                    <React.Fragment>
-                        <div className="header">
-                            <div className="inheaderl">
-                                <div className="flex">
-                                    <img
-                                        src="/tree.svg"
-                                        className="smalltreelogo"
-                                    />
-                                </div>
-                                <div className="smallwetreenow">
-                                    somenetwork
-                                </div>
-                            </div>
-                            <div className="inheaderp">
-                                <ProfilePic
-                                    clickHandler={() =>
-                                        this.setState({
-                                            uploaderIsVisible: true
-                                        })
-                                    }
-                                    picture_url={this.state.picture_url}
-                                    first={this.state.first}
-                                    last={this.state.last}
-                                />
-
-                                <div
-                                    className="logout"
-                                    onClick={e => this.allUsers(e)}
-                                >
-                                    <a href="#" className="ahref">
-                                        Users
-                                    </a>
-                                </div>
-
-                                <div className="pureflex">
-                                    <div className="arrcontainer">
-                                        <img
-                                            src="/arrdown.svg"
-                                            className="arrdown"
-                                        />
-                                    </div>
-                                    <div className="dropdown-menu">
-                                        <a
-                                            href="#"
-                                            onClick={e => this.logOut(e)}
-                                        >
-                                            Logout
-                                        </a>
-                                        <a href="#">Shop</a>
-                                        <a href="#">Charity</a>
-                                        <a href="#">Edit profile</a>
-                                        <a
-                                            href="#"
-                                            onClick={() =>
-                                                location.replace("/pictures")
-                                            }
-                                        >
-                                            Pictures
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            {this.state.uploaderIsVisible && (
-                                <Uploader
-                                    setImageUrl={picture_url =>
-                                        this.setState({ picture_url })
-                                    }
-                                    invisibleUploader={() =>
-                                        this.setState({
-                                            uploaderIsVisible: false
-                                        })
-                                    }
-                                />
-                            )}
+            <BrowserRouter>
+                <React.Fragment>
+                    <div className="header">
+                        <div className="inheaderl">
+                            <img
+                                src="/network.svg"
+                                className="smalltreelogo"
+                                href="#"
+                                onClick={() => location.replace("/")}
+                            />
+                            {/*<div className="smallwetreenow">Simple Network</div>*/}
                         </div>
-
-                        <div className="header">
-                            <div className="inheaderl">
-                                <div className="flex">
-                                    <img
-                                        src="/tree.svg"
-                                        className="smalltreelogo"
-                                    />
-                                </div>
-                                <div className="smallwetreenow">
-                                    somenetwork
-                                </div>
+                        {/*<div className="inheaderp">*/}
+                        <div className="header-icons-container">
+                            <div className="header-icon">
+                                <img src="/search.svg" />
                             </div>
-                            <div className="inheaderp">
-                                <ProfilePic
-                                    clickHandler={() =>
-                                        this.setState({
-                                            uploaderIsVisible: true
-                                        })
-                                    }
-                                    picture_url={this.state.picture_url}
-                                    first={this.state.first}
-                                    last={this.state.last}
-                                />
-
-                                <div
-                                    className="logout"
-                                    onClick={e => this.allUsers(e)}
-                                >
-                                    <a href="#" className="ahref">
-                                        Users
-                                    </a>
-                                </div>
-
-                                <div className="pureflex">
-                                    <div className="arrcontainer">
-                                        <img
-                                            src="/arrdown.svg"
-                                            className="arrdown"
-                                        />
-                                    </div>
-                                    <div className="dropdown-menu">
-                                        <a
-                                            href="#"
-                                            onClick={e => this.logOut(e)}
-                                        >
-                                            Logout
-                                        </a>
-                                        <a href="#">Shop</a>
-                                        <a href="#">Charity</a>
-                                        <a href="#">Edit profile</a>
-                                        <a
-                                            href="#"
-                                            onClick={() =>
-                                                location.replace("/pictures")
-                                            }
-                                        >
-                                            Pictures
-                                        </a>
-                                    </div>
-                                </div>
+                            <div className="header-icon">
+                                <img src="/chat.svg" />
                             </div>
-                            {this.state.uploaderIsVisible && (
-                                <Uploader
-                                    setImageUrl={picture_url =>
-                                        this.setState({ picture_url })
-                                    }
-                                    invisibleUploader={() =>
-                                        this.setState({
-                                            uploaderIsVisible: false
-                                        })
-                                    }
-                                />
-                            )}
+                            <div className="header-icon">
+                                <img src="/logout.svg" />
+                            </div>
+                            <ProfilePic
+                                clickHandler={() =>
+                                    this.setState({
+                                        uploaderIsVisible: true
+                                    })
+                                }
+                                picture_url={this.state.picture_url}
+                                first={this.state.first}
+                                last={this.state.last}
+                            />
                         </div>
 
                         {/*
+                            <div
+                                className="logout"
+                                onClick={e => this.allUsers(e)}
+                            >
+                                <a href="#" className="ahref">
+                                    Users
+                                </a>
+                            </div>
+
+                            <div className="pureflex">
+                                <div className="arrcontainer">
+                                    <img
+                                        src="/arrdown.svg"
+                                        className="arrdown"
+                                    />
+                                </div>
+                                <div className="dropdown-menu">
+                                    <a href="#" onClick={e => this.logOut(e)}>
+                                        Logout
+                                    </a>
+                                    <a href="#">Shop</a>
+                                    <a href="#">Charity</a>
+                                    <a href="#">Edit profile</a>
+                                    <a
+                                        href="#"
+                                        onClick={() =>
+                                            location.replace("/pictures")
+                                        }
+                                    >
+                                        Pictures
+                                    </a>
+                                </div>
+                            </div>*/}
+                        {/*</div>*/}
+                        {this.state.uploaderIsVisible && (
+                            <Uploader
+                                setImageUrl={picture_url =>
+                                    this.setState({ picture_url })
+                                }
+                                invisibleUploader={() =>
+                                    this.setState({
+                                        uploaderIsVisible: false
+                                    })
+                                }
+                            />
+                        )}
+                    </div>
+                    {/*
+                    <div className="header">
+                        <div className="inheaderl">
+                            <div className="flex">
+                                <img
+                                    src="/tree.svg"
+                                    className="smalltreelogo"
+                                />
+                            </div>
+                            <div className="smallwetreenow">somenetwork</div>
+                        </div>
+                        <div className="inheaderp">
+                            <ProfilePic
+                                clickHandler={() =>
+                                    this.setState({
+                                        uploaderIsVisible: true
+                                    })
+                                }
+                                picture_url={this.state.picture_url}
+                                first={this.state.first}
+                                last={this.state.last}
+                            />
+
+                            <div
+                                className="logout"
+                                onClick={e => this.allUsers(e)}
+                            >
+                                <a href="#" className="ahref">
+                                    Users
+                                </a>
+                            </div>
+
+                            <div className="pureflex">
+                                <div className="arrcontainer">
+                                    <img
+                                        src="/arrdown.svg"
+                                        className="arrdown"
+                                    />
+                                </div>
+                                <div className="dropdown-menu">
+                                    <a href="#" onClick={e => this.logOut(e)}>
+                                        Logout
+                                    </a>
+                                    <a href="#">Shop</a>
+                                    <a href="#">Charity</a>
+                                    <a href="#">Edit profile</a>
+                                    <a
+                                        href="#"
+                                        onClick={() =>
+                                            location.replace("/pictures")
+                                        }
+                                    >
+                                        Pictures
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {this.state.uploaderIsVisible && (
+                            <Uploader
+                                setImageUrl={picture_url =>
+                                    this.setState({ picture_url })
+                                }
+                                invisibleUploader={() =>
+                                    this.setState({
+                                        uploaderIsVisible: false
+                                    })
+                                }
+                            />
+                        )}
+                    </div>
+*/}
+                    {/*
                         <Route path="/users" component={Users} />
                         <Route path="/pictures" component={Pictures} />
                         <Route path="/user/:id" component={OtherProfile} />
@@ -266,9 +267,8 @@ export default class App extends React.Component {
                                 />
                             </div>
                         </div>*/}
-                    </React.Fragment>
-                </BrowserRouter>
-            </div>
+                </React.Fragment>
+            </BrowserRouter>
         );
     }
 }

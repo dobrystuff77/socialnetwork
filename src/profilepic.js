@@ -19,16 +19,18 @@ export default class ProfilePic extends React.Component {
 
     render() {
         return (
-            <div className="flexpic">
+            <>
+                {/*<div className="flexpic">*/}
+
                 <div className="flex">
                     {this.props.picture_url && (
-                        <>
+                        <div className="profilepic-container">
                             <img
                                 src={this.props.picture_url}
                                 onClick={this.props.clickHandler}
                                 className="profilepic"
                             />
-                        </>
+                        </div>
                     )}
                     {!this.props.picture_url && (
                         <>
@@ -40,14 +42,17 @@ export default class ProfilePic extends React.Component {
                         </>
                     )}
                 </div>
-                <div className="picheader" onClick={() => this.backToProfile()}>
+                <div
+                    className="nameheader"
+                    onClick={() => this.backToProfile()}
+                >
                     <a href="#" className="ahref">
                         {this.props.first}
-                        &nbsp;
-                        {this.props.last}
                     </a>
                 </div>
-            </div>
+
+                {/*</div>*/}
+            </>
         );
     }
 }
