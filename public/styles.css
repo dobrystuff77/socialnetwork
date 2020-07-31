@@ -104,7 +104,7 @@ textarea {
 
 .register-button a {
     color: white;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 @media (max-width: 600px) {
@@ -218,16 +218,6 @@ textarea {
     /* border: 2px solid firebrick; */
     /* font-weight: bold; */
     font-size: 20px;
-}
-
-.inheaderp {
-    /* width: 50%; */
-    border: 2px solid red;
-    width: 50px;
-    /* display: flex;
-    justify-content: flex-end;
-    align-items: center; */
-    /* height: 50px; */
 }
 
 .header-icons-container {

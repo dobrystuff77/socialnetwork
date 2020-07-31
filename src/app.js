@@ -95,17 +95,24 @@ export default class App extends React.Component {
                                 href="#"
                                 onClick={() => location.replace("/")}
                             />
-                            {/*<div className="smallwetreenow">Simple Network</div>*/}
                         </div>
-                        {/*<div className="inheaderp">*/}
                         <div className="header-icons-container">
-                            <div className={"header-icon"}>
+                            <div
+                                className={"header-icon"}
+                                onClick={() => location.replace("/users")}
+                            >
                                 <img src="/search.svg" />
                             </div>
-                            <div className="header-icon">
+                            <div
+                                className="header-icon"
+                                onClick={() => location.replace("/chat")}
+                            >
                                 <img src="/chat.svg" />
                             </div>
-                            <div className="header-icon">
+                            <div
+                                className="header-icon"
+                                onClick={e => this.logOut(e)}
+                            >
                                 <img src="/logout.svg" />
                             </div>
                             <ProfilePic
@@ -214,14 +221,7 @@ export default class App extends React.Component {
                                     <a href="#">Shop</a>
                                     <a href="#">Charity</a>
                                     <a href="#">Edit profile</a>
-                                    <a
-                                        href="#"
-                                        onClick={() =>
-                                            location.replace("/pictures")
-                                        }
-                                    >
-                                        Pictures
-                                    </a>
+
                                 </div>
                             </div>
                         </div>
@@ -281,6 +281,11 @@ export default class App extends React.Component {
     }
 }
 
-// {!this.state.profileInvisible && (
-//
-// )}
+// <a
+//     href="#"
+//     onClick={() =>
+//         location.replace("/pictures")
+//     }
+// >
+//     Pictures
+// </a>
