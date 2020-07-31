@@ -71,10 +71,11 @@ const diskStorage = multer.diskStorage({
 });
 
 const uploader = multer({
-    storage: diskStorage,
-    limits: {
-        fileSize: 2097152
-    }
+    storage: diskStorage
+    // ,
+    // limits: {
+    //     fileSize: 9097152
+    // }
 });
 
 app.get("/friends-wonnabes", (req, res) => {

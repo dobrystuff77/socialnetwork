@@ -99,7 +99,7 @@ export default class App extends React.Component {
                         </div>
                         {/*<div className="inheaderp">*/}
                         <div className="header-icons-container">
-                            <div className="header-icon">
+                            <div className={"header-icon"}>
                                 <img src="/search.svg" />
                             </div>
                             <div className="header-icon">
@@ -240,13 +240,13 @@ export default class App extends React.Component {
                     </div>
 */}
 
-                    {/*<Route path="/users" component={Users} />
+                    <Route path="/users" component={Users} />
                     <Route path="/pictures" component={Pictures} />
                     <Route path="/user/:id" component={OtherProfile} />
                     <Route path="/friends" component={Friends} />
                     <Route path="/picturesuser/:id" component={PicturesUser} />
                     <Route path="/chat" component={Chat} />
-                    <div className="profile">
+                    {/*<div className="profile">
                         <div className="underheader">
                             <Route
                                 exact
