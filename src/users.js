@@ -64,11 +64,11 @@ export default function Users() {
                     return (
                         <div
                             key={user.id}
-                            className="usersmallbox"
+                            className="friendsmallbox"
                             onClick={() => showProfile(user.id)}
                         >
                             {user.picture_url && (
-                                <div className="userpicture-container">
+                                <div className="userpicturetwo-container">
                                     <img
                                         src={user.picture_url}
                                         className="userpicture"
@@ -76,14 +76,14 @@ export default function Users() {
                                 </div>
                             )}
                             {!user.picture_url && (
-                                <div className="userpicture-container">
+                                <div className="userpicturetwo-container">
                                     <img
                                         src="./default.jpg"
                                         className="userpicture"
                                     />
                                 </div>
                             )}
-                            <div className="usersfirstlast">
+                            <div className="friendsfirstlast">
                                 {user.first} {user.last}
                             </div>
                         </div>

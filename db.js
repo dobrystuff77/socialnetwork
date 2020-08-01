@@ -89,7 +89,7 @@ exports.getNewestUsers = function() {
         .query(
             `SELECT first, last, picture_url, id FROM users
             ORDER BY id DESC
-            LIMIT 4`
+            LIMIT 8`
         )
         .then(({ rows }) => {
             return rows;

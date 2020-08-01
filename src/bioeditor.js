@@ -62,14 +62,22 @@ export default class Profile extends React.Component {
                                 </div>
 
                                 <div className="biotext">{this.props.bio}</div>
-                                <div
+
+                                <button
+                                    onClick={e => this.editTrue(e)}
+                                    className="friendbutton"
+                                >
+                                    edit
+                                </button>
+
+                                {/*<div
                                     className="editcontainer"
                                     onClick={e => this.editTrue(e)}
                                 >
                                     <a href="#d" className="edit">
                                         Edit
                                     </a>
-                                </div>
+                                </div>*/}
                             </div>
                         )}
                         {!this.props.bio && (
@@ -104,7 +112,10 @@ export default class Profile extends React.Component {
                                 value={this.state.bio}
                             />
                             <div className="justflex">
-                                <button onClick={e => this.submitBio(e)}>
+                                <button
+                                    onClick={e => this.submitBio(e)}
+                                    className="friendbutton"
+                                >
                                     submit
                                 </button>
                             </div>

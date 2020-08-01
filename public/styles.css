@@ -35,6 +35,12 @@ input {
 textarea {
     margin-bottom: 5px;
 }
+
+.loading-big {
+    width: 300px;
+    height: 300px;
+}
+
 /* /////////////////////////////////////////////////////////////////////////// */
 /* //REGISTER */
 .register-container {
@@ -487,7 +493,7 @@ textarea {
 }
 
 .edit {
-    /* margin-top: 5px; */
+    margin-top: 5px;
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -513,8 +519,8 @@ textarea {
 .addbio {
     display: flex;
     /* border: 2px solid pink; */
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 90%;
 }
@@ -831,7 +837,7 @@ textarea {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 1100px;
+    width: 705px;
     /* border: 2px solid pink; */
 }
 
@@ -875,7 +881,7 @@ textarea {
     font-weight: bold;
     margin-top: 10px;
     background-color: white;
-    border: 2px solid tomato;
+    /* border: 2px solid tomato; */
 }
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* //PICTURES */
@@ -947,6 +953,10 @@ textarea {
     .friends {
         width: 100%;
     }
+
+    .userscontainer {
+        width: 100%;
+    }
 }
 
 .infriends {
@@ -978,8 +988,8 @@ textarea {
 }
 
 .friendsmallbox {
-    /* width: 180px;
-    height: 200px; */
+    width: 90px;
+    height: 105px;
     /* border: 2px solid #dedfe0; */
     display: flex;
     flex-direction: column;

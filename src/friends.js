@@ -15,7 +15,7 @@ export default function Friends() {
     const friendsWannabes = useSelector(
         state =>
             state.friendsWannabes &&
-            state.friendsWannabes.filter(friend => !friend.accepted).slice(0, 4)
+            state.friendsWannabes.filter(friend => !friend.accepted).slice(0, 6)
     );
 
     console.log("acceptedFriends: ", acceptedFriends);
@@ -26,19 +26,26 @@ export default function Friends() {
         dispatch(getStatus());
     }, []);
 
+    const showProfile = a => {
+        console.log("target: ", a);
+        location.replace("/user/" + a);
+    };
+
     return (
         <>
             <div className="usersmaincontainer">
                 <div className="friendscontainer">
                     <div className="friends">
-                        <div className="uploadmore">
-                            <div className="picturesoptions">Wonnabes</div>
-                        </div>
-                        <div className="infriends">
-                            {friendsWannabes &&
-                                friendsWannabes.map((user, index) => {
-                                    return (
-                                        <>
+                        {friendsWannabes &&
+                            friendsWannabes.map((user, index) => {
+                                return (
+                                    <>
+                                        <div className="uploadmore">
+                                            <div className="picturesoptions">
+                                                Wonnabes
+                                            </div>
+                                        </div>
+                                        <div className="infriends">
                                             <div
                                                 key={user.id}
                                                 className="friendsmallbox"
@@ -93,10 +100,10 @@ export default function Friends() {
                                                     </button>
                                                 </div>
                                             </div>
-                                        </>
-                                    );
-                                })}
-                        </div>
+                                        </div>
+                                    </>
+                                );
+                            })}
                     </div>
                     <div className="friends">
                         <div className="uploadmore">
