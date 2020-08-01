@@ -87,7 +87,7 @@ export class OtherProfile extends React.Component {
                                 recipient_id={this.props.match.params.id}
                             />
                         </div>
-                        <SmallPicturesUser id={this.props.match.params.id} />
+                        {/*<SmallPicturesUser id={this.props.match.params.id} />*/}
                     </div>
                 )}
 

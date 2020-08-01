@@ -62,33 +62,31 @@ export default function Users() {
             <div className="userscontainer">
                 {users.map((user, index) => {
                     return (
-                        <>
-                            <div
-                                key={index}
-                                className="usersmallbox"
-                                onClick={() => showProfile(user.id)}
-                            >
-                                {user.picture_url && (
-                                    <div className="userpicture-container">
-                                        <img
-                                            src={user.picture_url}
-                                            className="userpicture"
-                                        />
-                                    </div>
-                                )}
-                                {!user.picture_url && (
-                                    <div className="userpicture-container">
-                                        <img
-                                            src="./default.jpg"
-                                            className="userpicture"
-                                        />
-                                    </div>
-                                )}
-                                <div className="usersfirstlast">
-                                    {user.first} {user.last}
+                        <div
+                            key={user.id}
+                            className="usersmallbox"
+                            onClick={() => showProfile(user.id)}
+                        >
+                            {user.picture_url && (
+                                <div className="userpicture-container">
+                                    <img
+                                        src={user.picture_url}
+                                        className="userpicture"
+                                    />
                                 </div>
+                            )}
+                            {!user.picture_url && (
+                                <div className="userpicture-container">
+                                    <img
+                                        src="./default.jpg"
+                                        className="userpicture"
+                                    />
+                                </div>
+                            )}
+                            <div className="usersfirstlast">
+                                {user.first} {user.last}
                             </div>
-                        </>
+                        </div>
                     );
                 })}
             </div>

@@ -38,9 +38,10 @@ export default class Profile extends React.Component {
                         />
                     </div>
                 </div>
-                <SmallPictures />
-                <Chat />
-                <SmallFriends />
+
+                {/*<SmallPictures />*/}
+                {/*<Chat />*/}
+                {/*<SmallFriends />*/}
             </React.Fragment>
         );
     }

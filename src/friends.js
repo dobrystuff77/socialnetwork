@@ -15,11 +15,11 @@ export default function Friends() {
     const friendsWannabes = useSelector(
         state =>
             state.friendsWannabes &&
-            state.friendsWannabes.filter(friend => !friend.accepted)
+            state.friendsWannabes.filter(friend => !friend.accepted).slice(0, 4)
     );
 
-    console.log("friendsWannabes: ", friendsWannabes);
     console.log("acceptedFriends: ", acceptedFriends);
+    console.log("friendsWannabes: ", friendsWannabes);
 
     useEffect(() => {
         console.log("ASDASD");
@@ -32,6 +32,74 @@ export default function Friends() {
                 <div className="friendscontainer">
                     <div className="friends">
                         <div className="uploadmore">
+                            <div className="picturesoptions">Wonnabes</div>
+                        </div>
+                        <div className="infriends">
+                            {friendsWannabes &&
+                                friendsWannabes.map((user, index) => {
+                                    return (
+                                        <>
+                                            <div
+                                                key={user.id}
+                                                className="friendsmallbox"
+                                            >
+                                                {user.picture_url && (
+                                                    <div className="userpicturetwo-container">
+                                                        <img
+                                                            src={
+                                                                user.picture_url
+                                                            }
+                                                            className="userpicturetwo"
+                                                        />
+                                                    </div>
+                                                )}
+                                                {!user.picture_url && (
+                                                    <>
+                                                        <div className="userpicturetwo-container">
+                                                            <img
+                                                                src="./default.jpg"
+                                                                className="userpicturetwo"
+                                                            />
+                                                        </div>
+                                                    </>
+                                                )}
+                                                <div className="friendsfirstlast">
+                                                    {user.first} {user.last}
+                                                </div>
+                                                <div className="button-container">
+                                                    <button
+                                                        className="friendbutton"
+                                                        onClick={e =>
+                                                            dispatch(
+                                                                acceptFriend(
+                                                                    user.id
+                                                                )
+                                                            )
+                                                        }
+                                                    >
+                                                        Confirm
+                                                    </button>
+                                                    <button
+                                                        className="friendbutton"
+                                                        onClick={e =>
+                                                            dispatch(
+                                                                unfriend(
+                                                                    user.id
+                                                                )
+                                                            )
+                                                        }
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </>
+                                    );
+                                })}
+                        </div>
+                    </div>
+                    <div className="friends">
+                        <div className="uploadmore">
                             <div className="picturesoptions">Friends</div>
                         </div>
                         <div className="infriends">
@@ -40,28 +108,32 @@ export default function Friends() {
                                     return (
                                         <>
                                             <div
-                                                key={index}
+                                                key={user.id}
                                                 className="friendsmallbox"
                                             >
                                                 {user.picture_url && (
                                                     <>
-                                                        <img
-                                                            src={
-                                                                user.picture_url
-                                                            }
-                                                            className="userpicturetwo"
-                                                        />
+                                                        <div className="userpicturetwo-container">
+                                                            <img
+                                                                src={
+                                                                    user.picture_url
+                                                                }
+                                                                className="userpicturetwo"
+                                                            />
+                                                        </div>
                                                     </>
                                                 )}
                                                 {!user.picture_url && (
                                                     <>
-                                                        <img
-                                                            src="./default.jpg"
-                                                            className="userpicturetwo"
-                                                        />
+                                                        <div className="userpicturetwo-container">
+                                                            <img
+                                                                src="./default.jpg"
+                                                                className="userpicturetwo"
+                                                            />
+                                                        </div>
                                                     </>
                                                 )}
-                                                <div className="usersfirstlast">
+                                                <div className="friendsfirstlast">
                                                     {user.first} {user.last}
                                                 </div>
                                                 <button
@@ -72,59 +144,7 @@ export default function Friends() {
                                                         )
                                                     }
                                                 >
-                                                    End Relationship
-                                                </button>
-                                            </div>
-                                        </>
-                                    );
-                                })}
-                        </div>
-                    </div>
-                    <div className="friends">
-                        <div className="uploadmore">
-                            <div className="picturesoptions">Wonnabes</div>
-                        </div>
-                        <div className="infriends">
-                            {friendsWannabes &&
-                                friendsWannabes.map((user, index) => {
-                                    return (
-                                        <>
-                                            <div
-                                                key={index}
-                                                className="friendsmallbox"
-                                            >
-                                                {user.picture_url && (
-                                                    <>
-                                                        <img
-                                                            src={
-                                                                user.picture_url
-                                                            }
-                                                            className="userpicturetwo"
-                                                        />
-                                                    </>
-                                                )}
-                                                {!user.picture_url && (
-                                                    <>
-                                                        <img
-                                                            src="./default.jpg"
-                                                            className="userpicturetwo"
-                                                        />
-                                                    </>
-                                                )}
-                                                <div className="usersfirstlast">
-                                                    {user.first} {user.last}
-                                                </div>
-                                                <button
-                                                    className="friendbutton"
-                                                    onClick={e =>
-                                                        dispatch(
-                                                            acceptFriend(
-                                                                user.id
-                                                            )
-                                                        )
-                                                    }
-                                                >
-                                                    Accept Invitation
+                                                    Unfriend
                                                 </button>
                                             </div>
                                         </>
@@ -137,34 +157,3 @@ export default function Friends() {
         </>
     );
 }
-// {
-//     state.map((user, index) => {
-//         return (
-//             <>
-//                 <div
-//                     key={index}
-//                     className="usersmallbox"
-//                     onClick={() => showProfile(user.id)}
-//                 >
-//                     {user.picture_url && (
-//                         <>
-//                             <img
-//                                 src={user.picture_url}
-//                                 className="userpicture"
-//                             />
-//                         </>
-//                     )}
-//                     {!user.picture_url && (
-//                         <>
-//                             <img src="./default.gif" className="userpicture" />
-//                         </>
-//                     )}
-//                     <div className="usersfirstlast">
-//                         {user.first}
-//                         {user.last}
-//                     </div>
-//                 </div>
-//             </>
-//         );
-//     });
-// }

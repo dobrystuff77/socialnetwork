@@ -46,6 +46,7 @@ textarea {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 60px;
 }
 
 .simplenetwork {
@@ -57,6 +58,7 @@ textarea {
     justify-content: center;
     align-items: center; */
     margin-top: 25px;
+    margin-bottom: 25px;
 }
 .treelogocontainer {
     height: 180px;
@@ -221,7 +223,7 @@ textarea {
 }
 
 .header-icons-container {
-    width: 300px;
+    /* width: 300px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -270,6 +272,19 @@ textarea {
     margin-bottom: 8px;
 }
 
+@media (max-width: 500px) {
+    .header-icon {
+        width: 25px;
+    }
+
+    .flex {
+        margin: 5px;
+    }
+    .header-icon {
+        margin: 5px;
+    }
+}
+
 @media (max-width: 400px) {
     .smalltreelogo {
         height: 30px;
@@ -283,10 +298,6 @@ textarea {
     }
 
     .header-icon {
-        /* margin-top: 15px; */
-        width: 30px;
-        /* margin-left: 5px;
-        margin-right: 5px; */
         margin: 10px;
     }
 
@@ -422,7 +433,7 @@ textarea {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
+    width: 70%;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -470,16 +481,17 @@ textarea {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     text-align: center;
     /* border: 4px solid tomato; */
 }
 
 .edit {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     text-decoration: none;
     color: black;
     font-weight: bold;
+    font-size: 13px;
 }
 
 .flexfullcolumn {
@@ -495,7 +507,7 @@ textarea {
 .bioinput {
     display: flex;
     width: 100%;
-    height: 200px;
+    height: 150px;
 }
 
 .addbio {
@@ -509,6 +521,7 @@ textarea {
 
 .underheader {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     /* border: 2px solid blue; */
     align-items: flex-start;
@@ -529,24 +542,29 @@ textarea {
 .picfirstlast {
     display: flex;
     flex-direction: column;
-    max-width: 204px;
+    width: 300px;
     align-items: center;
     /* border: solid 3px red; */
     background-color: white;
-    border: 2px solid #dedfe0;
-    margin: 5px;
+    /* border: 2px solid #dedfe0; */
+    margin-top: 60px;
+    /* margin: 5px; */
     padding-bottom: 5px;
 }
 
 .flexpicprofile {
     display: flex;
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
 }
 
 .profilepicbig {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     background-color: white;
     object-fit: cover;
     /* border: 2px solid green; */
@@ -562,9 +580,9 @@ textarea {
     font-weight: bold;
     background-color: white;
     /* margin-top: 10px; */
-    width: 90%;
+    width: 100%;
     height: 50px;
-    border-bottom: 1px solid #dedfe0;
+    /* border-bottom: 1px solid #dedfe0; */
 }
 
 .flexpic {
@@ -847,17 +865,6 @@ textarea {
     background-color: white;
     object-fit: cover;
 }
-/* ////////////////////////////////////////// */
-/* ???????????? */
-
-.userpicturetwo {
-    width: 100%;
-    height: 130px;
-    background-color: white;
-    object-fit: cover;
-}
-/* ?????????????????? */
-/* /////////////////////////////////////////////// */
 
 .usersfirstlast {
     display: flex;
@@ -868,7 +875,7 @@ textarea {
     font-weight: bold;
     margin-top: 10px;
     background-color: white;
-    /* border: 2px solid black; */
+    border: 2px solid tomato;
 }
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* //PICTURES */
@@ -916,14 +923,16 @@ textarea {
 /* FRIENDS */
 .friendscontainer {
     display: flex;
+    flex-direction: column;
     width: 100%;
     /* min-height: 90vh; */
     /* border: 2px solid green; */
+    align-items: center;
 }
 
 .friends {
     /* background-color: #8cc63e1f; */
-    width: 50%;
+    width: 805px;
     /* border: 2px solid red; */
     /* background-color: white; */
     display: flex;
@@ -933,6 +942,13 @@ textarea {
     padding-top: 5px;
     /* background-color: #8cc63e1f; */
 }
+
+@media (max-width: 800px) {
+    .friends {
+        width: 100%;
+    }
+}
+
 .infriends {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -944,7 +960,7 @@ textarea {
     height: 100%;
     /* border: 2px solid gold; */
     background-color: white;
-    border: 1px solid #dedfe0;
+    /* border: 1px solid #dedfe0; */
     margin-right: 5px;
 }
 
@@ -962,16 +978,59 @@ textarea {
 }
 
 .friendsmallbox {
-    width: 180px;
-    min-height: 190px;
-    border: 2px solid #dedfe0;
+    /* width: 180px;
+    height: 200px; */
+    /* border: 2px solid #dedfe0; */
     display: flex;
     flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
     margin: 5px;
     cursor: pointer;
 }
-.friendbuttonn {
+
+.userpicturetwo-container {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 150px;
+}
+
+.userpicturetwo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.friendsfirstlast {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 27px;
+    font-weight: bold;
+    /* margin-top: 10px; */
+    background-color: white;
+    /* border: 2px solid tomato; */
+    font-size: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 90px;
+}
+
+.friendbutton {
     height: 20px;
+    width: 50px;
+    background: black;
+    color: white;
+    border: 0px solid transparent;
+    display: inline-block;
+    border-radius: 15px;
+    margin: 2px;
+    font-size: 8px;
 }
 /* //////////////////////////////////////////////// */
 

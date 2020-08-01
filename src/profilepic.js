@@ -27,7 +27,7 @@ export default class ProfilePic extends React.Component {
                         <div className="profilepic-container">
                             <img
                                 src={this.props.picture_url}
-                                onClick={this.props.clickHandler}
+                                onClick={() => this.backToProfile()}
                                 className="profilepic"
                             />
                         </div>
@@ -36,7 +36,7 @@ export default class ProfilePic extends React.Component {
                         <>
                             <img
                                 src="./default.jpg"
-                                onClick={this.props.clickHandler}
+                                onClick={() => this.backToProfile()}
                                 className="profilepic"
                             />
                         </>
