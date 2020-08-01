@@ -79,9 +79,7 @@ export default class App extends React.Component {
                         alignItems: "center"
                     }}
                 >
-                    <div className="loading-big">
-                        <img src="/loading.gif" alt="Loading..." />
-                    </div>
+                    <img src="/loading.gif" alt="Loading..." />
                 </div>
             );
         }
