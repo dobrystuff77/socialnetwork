@@ -55,7 +55,7 @@ export default function FriendButton(props) {
                         "/update/" + props.recipient_id + ".json"
                     );
                     setChange("c");
-                }
+                } else friendOrNot.btnText = "no button text";
             } catch (e) {
                 console.log(e);
             }
