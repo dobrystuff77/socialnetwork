@@ -90,7 +90,6 @@ export default function FriendButton(props) {
                 style={{ marginTop: "10px" }}
                 onClick={unfriendlyButton}
             >
-                aaa
                 {friendOrNot.btnText}
             </button>
         </>
