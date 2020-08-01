@@ -17,7 +17,6 @@ const uidSafe = require("uid-safe");
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 let secrets;
-let onlineUsers = {};
 
 if (process.env.NODE_ENV != "production") {
     app.use(
@@ -562,6 +561,8 @@ server.listen(process.env.PORT || 8080, function() {
     console.log("I'm listening.on 8080");
 });
 
+let onlineUsers = {};
+
 ////////////////////////////////////////////////////////////////////////////////
 // SOCKET IO
 io.on("connection", async function(socket) {
@@ -577,11 +578,7 @@ io.on("connection", async function(socket) {
         console.log(
             "*******************************/socket.on/disconnect!!!!!!"
         );
-        // console.log("actuall user: ", userId);
-        // console.log(`user with id: ${socket.id} is now disconnected`);
-        // console.log("onlineUsers before delete:", onlineUsers);
         delete onlineUsers[socket.id];
-        // console.log("onlineUsers after delete:", onlineUsers);
         let onlineUsersArr = [];
         Object.entries(onlineUsers).map(onlineUserId => {
             onlineUsersArr.push(onlineUserId[1]);
