@@ -15,7 +15,7 @@ export async function getStatus() {
 }
 
 export async function unfriend(user_id) {
-    //axios request to server
+    //axios request to server    ff
     //all action creaters will return object that have a type property
 
     const { data } = await axios.post("/cancel/" + user_id + ".json");
