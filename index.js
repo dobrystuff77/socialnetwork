@@ -15,7 +15,7 @@ const { s3Url } = require("./config");
 const multer = require("multer");
 const uidSafe = require("uid-safe");
 const server = require("http").Server(app);
-const io = require("socket.io")(server);
+const io = require("socket.io").listen(server);
 let secrets;
 
 if (process.env.NODE_ENV != "production") {
