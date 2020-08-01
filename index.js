@@ -15,7 +15,7 @@ const { s3Url } = require("./config");
 const multer = require("multer");
 const uidSafe = require("uid-safe");
 const server = require("http").Server(app);
-const io = require("socket.io")(server, { origins: "localhost:8080" });
+const io = require("socket.io")(server);
 let secrets;
 let onlineUsers = {};
 
