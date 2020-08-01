@@ -105,8 +105,8 @@ textarea {
     border-radius: 10px;
     text-align: center;
     height: 25px;
-    background: black;
-    color: white;
+    /* background: black;
+    color: white; */
     width: 200px;
 }
 
