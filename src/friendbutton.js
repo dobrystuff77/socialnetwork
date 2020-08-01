@@ -86,10 +86,11 @@ export default function FriendButton(props) {
     return (
         <>
             <button
-                // className="register-button"
+                className="register-button"
                 style={{ marginTop: "10px" }}
                 onClick={unfriendlyButton}
             >
+                aaa
                 {friendOrNot.btnText}
             </button>
         </>

@@ -59,7 +59,6 @@ export class OtherProfile extends React.Component {
                                     />
                                 </div>
                             )}
-
                             <div className="firstlastunderheader">
                                 {this.state.first} {this.state.last}
                             </div>
@@ -86,6 +85,7 @@ export class OtherProfile extends React.Component {
                                 sender_id={this.state.userId}
                                 recipient_id={this.props.match.params.id}
                             />
+                            here should be button
                         </div>
                         {/*<SmallPicturesUser id={this.props.match.params.id} />*/}
                     </div>
