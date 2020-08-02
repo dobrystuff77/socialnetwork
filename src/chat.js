@@ -3,7 +3,7 @@ import { socket } from "./socket.js";
 import { useSelector } from "react-redux";
 import axios from "./axios";
 
-export function Chat() {
+export function Chat({ myId }) {
     const chatMessages = useSelector(state => state && state.chatMessages);
     const usersOnline = useSelector(state => state && state.online);
 
@@ -33,6 +33,7 @@ export function Chat() {
         console.log("target: ", a);
         location.replace("/user/" + a);
     };
+
     return (
         <div className="chat-container">
             <div className="wrapper">
@@ -62,11 +63,6 @@ export function Chat() {
                                             />
                                         )}
                                     </div>
-
-                                    {/*<div className="onlinefirstlast">
-                                        {online.first} &nbsp;
-                                        {online.last}
-                                    </div>*/}
                                 </div>
                             );
                         })}
@@ -85,19 +81,22 @@ export function Chat() {
                                                 className="messagecontainer"
                                                 key={index}
                                             >
-                                                <div className="containerchatpicture">
+                                                <div
+                                                    className="onlinepicturewrapper"
+                                                    style={{ width: "60px" }}
+                                                >
                                                     {message.picture_url && (
                                                         <img
                                                             src={
                                                                 message.picture_url
                                                             }
-                                                            className="chatpicture"
+                                                            className="onlinepicture"
                                                         />
                                                     )}
                                                     {!message.picture_url && (
                                                         <img
                                                             src="./default.jpg"
-                                                            className="chatpicture"
+                                                            className="onlinepicture"
                                                         />
                                                     )}
                                                 </div>

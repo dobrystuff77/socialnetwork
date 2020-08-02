@@ -126,7 +126,13 @@ export default class App extends React.Component {
                     <Route path="/users" component={Users} />
                     <Route path="/user/:id" component={OtherProfile} />
                     <Route path="/friends" component={Friends} />
-                    <Route path="/chat" component={Chat} />
+
+                    <Route
+                        exact
+                        path="/chat"
+                        render={() => <Chat id={this.state.id} />}
+                    />
+
                     <div className="profile">
                         <div className="underheader">
                             <Route

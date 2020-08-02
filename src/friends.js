@@ -37,7 +37,7 @@ export default function Friends() {
                     <div className="friends">
                         {friendsWannabes && (
                             <div className="uploadmore">
-                                <div className="picturesoptions">Wonnabes</div>
+                                <div className="picturesoptions">Wannabes</div>
                             </div>
                         )}
                         <div className="infriends">
