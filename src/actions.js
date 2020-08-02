@@ -57,7 +57,6 @@ export async function newMessage(message) {
 }
 
 export async function usersOnline(online) {
-    console.log("usersOnline!!!:", online);
     return {
         type: "USERS_ONLINE",
         online

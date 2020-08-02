@@ -1,18 +1,15 @@
 import React from "react";
 import axios from "./axios";
+
 import ProfilePic from "./profilepic";
 import Uploader from "./uploader";
 import Profile from "./profile";
-import { Pictures } from "./pictures";
-import PicturesUser from "./picturesuser";
+import Users from "./users";
+import Friends from "./friends";
+import { Chat } from "./chat";
 
 import { BrowserRouter, Route } from "react-router-dom";
 import { OtherProfile } from "./other-profile";
-
-import { Chat } from "./chat";
-
-import Users from "./users";
-import Friends from "./friends";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -20,42 +17,23 @@ export default class App extends React.Component {
         this.state = {};
     }
 
-    // mounted jak z vue
     componentDidMount() {
-        // console.log("**********************componentDidMount()");
         axios
             .get("/user")
-            .then(
-                ({ data }) => {
-                    // console.log(
-                    //     "************AXIOS IN componentDidMount GET/user"
-                    // );
-                    // console.log("data:", data);
-                    // console.log("data.first:", data.first);
-                    // console.log("data.last:", data.last);
-                    // console.log("data.id:", data.bio);
-                    if (data.picture_url == null) {
-                        data.picture_url = "/default.jpg";
-                        // console.log(
-                        //     "data.picture_url in if: ",
-                        //     data.picture_url
-                        // );
-                        this.setState(data);
-                    } else {
-                        this.setState(data);
-                    }
-                    // console.log("data.id:", data.id);
-                    // console.log("result in axios: ", data);
-                } //wsadzam odp do state
-            )
+            .then(({ data }) => {
+                if (data.picture_url == null) {
+                    data.picture_url = "/default.jpg";
+                    this.setState(data);
+                } else {
+                    this.setState(data);
+                }
+            })
             .catch("err in axios GET/user");
     }
     logOut() {
-        // console.log("logout method");
         axios
             .get("/logout")
             .then(() => {
-                // console.log("AXIOS GET/logout");
                 location.replace("/");
             })
             .catch(err => {
@@ -64,7 +42,6 @@ export default class App extends React.Component {
     }
 
     allUsers() {
-        // console.log("allUsers method");
         location.replace("/users");
     }
     render() {
@@ -132,41 +109,6 @@ export default class App extends React.Component {
                             />
                         </div>
 
-                        {/*
-                            <div
-                                className="logout"
-                                onClick={e => this.allUsers(e)}
-                            >
-                                <a href="#" className="ahref">
-                                    Users
-                                </a>
-                            </div>
-
-                            <div className="pureflex">
-                                <div className="arrcontainer">
-                                    <img
-                                        src="/arrdown.svg"
-                                        className="arrdown"
-                                    />
-                                </div>
-                                <div className="dropdown-menu">
-                                    <a href="#" onClick={e => this.logOut(e)}>
-                                        Logout
-                                    </a>
-                                    <a href="#">Shop</a>
-                                    <a href="#">Charity</a>
-                                    <a href="#">Edit profile</a>
-                                    <a
-                                        href="#"
-                                        onClick={() =>
-                                            location.replace("/pictures")
-                                        }
-                                    >
-                                        Pictures
-                                    </a>
-                                </div>
-                            </div>*/}
-                        {/*</div>*/}
                         {this.state.uploaderIsVisible && (
                             <Uploader
                                 setImageUrl={picture_url =>
@@ -180,76 +122,10 @@ export default class App extends React.Component {
                             />
                         )}
                     </div>
-                    {/*
-                    <div className="header">
-                        <div className="inheaderl">
-                            <div className="flex">
-                                <img
-                                    src="/tree.svg"
-                                    className="smalltreelogo"
-                                />
-                            </div>
-                            <div className="smallwetreenow">somenetwork</div>
-                        </div>
-                        <div className="inheaderp">
-                            <ProfilePic
-                                clickHandler={() =>
-                                    this.setState({
-                                        uploaderIsVisible: true
-                                    })
-                                }
-                                picture_url={this.state.picture_url}
-                                first={this.state.first}
-                                last={this.state.last}
-                            />
-
-                            <div
-                                className="logout"
-                                onClick={e => this.allUsers(e)}
-                            >
-                                <a href="#" className="ahref">
-                                    Users
-                                </a>
-                            </div>
-
-                            <div className="pureflex">
-                                <div className="arrcontainer">
-                                    <img
-                                        src="/arrdown.svg"
-                                        className="arrdown"
-                                    />
-                                </div>
-                                <div className="dropdown-menu">
-                                    <a href="#" onClick={e => this.logOut(e)}>
-                                        Logout
-                                    </a>
-                                    <a href="#">Shop</a>
-                                    <a href="#">Charity</a>
-                                    <a href="#">Edit profile</a>
-
-                                </div>
-                            </div>
-                        </div>
-                        {this.state.uploaderIsVisible && (
-                            <Uploader
-                                setImageUrl={picture_url =>
-                                    this.setState({ picture_url })
-                                }
-                                invisibleUploader={() =>
-                                    this.setState({
-                                        uploaderIsVisible: false
-                                    })
-                                }
-                            />
-                        )}
-                    </div>
-*/}
 
                     <Route path="/users" component={Users} />
-                    {/*<Route path="/pictures" component={Pictures} />*/}
                     <Route path="/user/:id" component={OtherProfile} />
                     <Route path="/friends" component={Friends} />
-                    {/*<Route path="/picturesuser/:id" component={PicturesUser} />*/}
                     <Route path="/chat" component={Chat} />
                     <div className="profile">
                         <div className="underheader">

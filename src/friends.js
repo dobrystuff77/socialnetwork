@@ -22,7 +22,6 @@ export default function Friends() {
     console.log("friendsWannabes: ", friendsWannabes);
 
     useEffect(() => {
-        console.log("ASDASD");
         dispatch(getStatus());
     }, []);
 
@@ -36,16 +35,16 @@ export default function Friends() {
             <div className="usersmaincontainer">
                 <div className="friendscontainer">
                     <div className="friends">
-                        {friendsWannabes &&
-                            friendsWannabes.map((user, index) => {
-                                return (
-                                    <>
-                                        <div className="uploadmore">
-                                            <div className="picturesoptions">
-                                                Wonnabes
-                                            </div>
-                                        </div>
-                                        <div className="infriends">
+                        {friendsWannabes && (
+                            <div className="uploadmore">
+                                <div className="picturesoptions">Wonnabes</div>
+                            </div>
+                        )}
+                        <div className="infriends">
+                            {friendsWannabes &&
+                                friendsWannabes.map((user, index) => {
+                                    return (
+                                        <>
                                             <div
                                                 key={user.id}
                                                 className="friendsmallbox"
@@ -100,10 +99,10 @@ export default function Friends() {
                                                     </button>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </>
-                                );
-                            })}
+                                        </>
+                                    );
+                                })}
+                        </div>
                     </div>
                     <div className="friends">
                         <div className="uploadmore">
