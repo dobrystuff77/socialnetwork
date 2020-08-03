@@ -1165,6 +1165,7 @@ textarea {
     width: 100%;
     display: flex;
     padding-left: 10px;
+    padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     flex-direction: column;
@@ -1181,11 +1182,12 @@ textarea {
     flex-direction: column;
     background-color: white;
     margin: 5px;
+    align-items: center;
 }
 
 .chat-wrapper {
     width: 100%;
-    height: 400px;
+    height: 56vh;
     overflow-y: scroll;
     /* overflow-x: scroll; */
     /* border: 5px solid blue; */
@@ -1205,12 +1207,29 @@ textarea {
 }
 
 .messagecontainer {
-    /* border-bottom: 2px solid aquamarine; */
+    background: aqamarine;
     /* display: flex; */
     width: 100%;
     display: inline-flex;
     margin-bottom: 10px;
     padding-left: 5px;
+    justify-content: flex-start;
+}
+
+.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+/* .mymessagecontainer {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding-left: 5px;
+} */
+
+.margin-left {
+    margin-left: 10px;
 }
 
 .chatpicture {
@@ -1233,7 +1252,7 @@ textarea {
     margin-top: 5px;
     margin-left: 5px;
     display: flex;
-    width: 90%;
+    width: 100%;
 }
 
 .firstlast {
@@ -1267,4 +1286,15 @@ textarea {
     /* margin-right: 3px; */
     margin-left: 5px;
     display: inline-block;
+}
+
+.textarea-div {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid red; */
+    /* margin-left: 5px;
+    margin-right: 5px; */
+    padding-left: 5px;
+    padding-right: 5px;
 }

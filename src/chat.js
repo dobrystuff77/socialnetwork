@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { socket } from "./socket.js";
 import { useSelector } from "react-redux";
 import axios from "./axios";
@@ -11,6 +11,7 @@ export function Chat({ myId }) {
     // console.log("chatMessages: ", chatMessages);
 
     const elemRef = useRef();
+    const [myIdState, setMyState] = useState(myId);
 
     useEffect(() => {
         // console.log("Chat working");
@@ -34,7 +35,7 @@ export function Chat({ myId }) {
         location.replace("/user/" + a);
     };
 
-    // console.log("my id!!! ", myId);
+    console.log("my id!!! ", myId);
     return (
         <div className="chat-container">
             <div className="wrapper">
@@ -78,72 +79,142 @@ export function Chat({ myId }) {
                                 .map((message, index) => {
                                     return (
                                         <>
-                                            {message.id === myId && (
-                                                <div
-                                                    className="messagecontainer"
-                                                    key={index}
-                                                >
-                                                    <div
-                                                        className="onlinepicturewrapper"
-                                                        style={{
-                                                            width: "60px"
-                                                        }}
-                                                    >
-                                                        {message.picture_url && (
-                                                            <img
-                                                                src={
-                                                                    message.picture_url
-                                                                }
-                                                                className="onlinepicture"
-                                                            />
-                                                        )}
-                                                        {!message.picture_url && (
-                                                            <img
-                                                                src="./default.jpg"
-                                                                className="onlinepicture"
-                                                            />
-                                                        )}
-                                                    </div>
-                                                    <div className="textchatwrapper">
-                                                        <div className="firstlastinchat">
-                                                            <div className="firstlast">
-                                                                {message.first}
-                                                                &nbsp;
-                                                                {message.last}
-                                                            </div>
+                                            <div
+                                                key={index}
+                                                style={{ width: "100%" }}
+                                            >
+                                                {message.user_id != myId && (
+                                                    <div className="messagecontainer">
+                                                        <div
+                                                            className="onlinepicturewrapper"
+                                                            style={{
+                                                                width: "60px"
+                                                            }}
+                                                        >
+                                                            {message.picture_url && (
+                                                                <img
+                                                                    src={
+                                                                        message.picture_url
+                                                                    }
+                                                                    className="onlinepicture"
+                                                                />
+                                                            )}
+                                                            {!message.picture_url && (
+                                                                <img
+                                                                    src="./default.jpg"
+                                                                    className="onlinepicture"
+                                                                />
+                                                            )}
                                                         </div>
-                                                        <div className="textcontainerinchat">
-                                                            <div className="textinchat">
-                                                                <div className="date">
-                                                                    {new Date(
-                                                                        message.created_at
-                                                                    ).toLocaleDateString(
-                                                                        "en-US",
-                                                                        {
-                                                                            hour:
-                                                                                "2-digit",
-                                                                            minute:
-                                                                                "2-digit"
-                                                                        }
-                                                                    )}
+                                                        <div className="textchatwrapper">
+                                                            <div className="firstlastinchat">
+                                                                <div className="firstlast">
+                                                                    {
+                                                                        message.first
+                                                                    }
+                                                                    &nbsp;
+                                                                    {
+                                                                        message.last
+                                                                    }
                                                                 </div>
+                                                            </div>
+                                                            <div className="textcontainerinchat">
+                                                                <div className="textinchat">
+                                                                    <div className="date">
+                                                                        {new Date(
+                                                                            message.created_at
+                                                                        ).toLocaleDateString(
+                                                                            "en-US",
+                                                                            {
+                                                                                hour:
+                                                                                    "2-digit",
+                                                                                minute:
+                                                                                    "2-digit"
+                                                                            }
+                                                                        )}
+                                                                    </div>
 
-                                                                {
-                                                                    message.message
-                                                                }
+                                                                    {
+                                                                        message.message
+                                                                    }
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            )}
+                                                )}
+
+                                                {message.user_id == myId && (
+                                                    <div className="messagecontainer right">
+                                                        <div className="textchatwrapper">
+                                                            <div className="firstlastinchat right">
+                                                                <div className="firstlast">
+                                                                    {
+                                                                        message.first
+                                                                    }
+                                                                    &nbsp;
+                                                                    {
+                                                                        message.last
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                            <div className="textcontainerinchat">
+                                                                <div className="textinchat">
+                                                                    <div className="date">
+                                                                        {new Date(
+                                                                            message.created_at
+                                                                        ).toLocaleDateString(
+                                                                            "en-US",
+                                                                            {
+                                                                                hour:
+                                                                                    "2-digit",
+                                                                                minute:
+                                                                                    "2-digit"
+                                                                            }
+                                                                        )}
+                                                                    </div>
+
+                                                                    {
+                                                                        message.message
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div
+                                                            className="onlinepicturewrapper margin-left"
+                                                            style={{
+                                                                width: "60px"
+                                                            }}
+                                                        >
+                                                            {message.picture_url && (
+                                                                <img
+                                                                    src={
+                                                                        message.picture_url
+                                                                    }
+                                                                    className="onlinepicture"
+                                                                />
+                                                            )}
+                                                            {!message.picture_url && (
+                                                                <img
+                                                                    src="./default.jpg"
+                                                                    className="onlinepicture"
+                                                                />
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </>
                                     );
                                 })}
                     </div>
-                    <textarea
-                        placeholder="Add your message here"
-                        onKeyDown={keyCheck}
-                    ></textarea>
+                    <div className="textarea-div">
+                        <textarea
+                            style={{ margin: "auto" }}
+                            placeholder="Add your message here"
+                            onKeyDown={keyCheck}
+                        ></textarea>
+                    </div>
                     <div className="flexfullcolumn">
                         <div className="edit">Chat</div>
                     </div>

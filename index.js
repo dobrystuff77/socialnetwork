@@ -640,6 +640,7 @@ io.on("connection", async function(socket) {
             );
             // newmessage[0].picture_url = data.rows[0].picture_url;
             // console.log("new message:", newmessage[0].created_at);
+            data.rows[0].user_id = data.rows[0].id;
             data.rows[0].message = msg;
             data.rows[0].created_at = newmessage[0].created_at;
             io.sockets.emit("newmessage", data.rows[0]);
