@@ -19,7 +19,7 @@ export function Chat({ myId }) {
     }, [chatMessages]);
 
     useEffect(() => {
-        console.log("!!!!!!!!", usersOnline && usersOnline.lenght);
+        // console.log("!!!!!!!!", usersOnline && usersOnline.lenght);
     }, [usersOnline]);
 
     const keyCheck = e => {
@@ -30,10 +30,11 @@ export function Chat({ myId }) {
         }
     };
     const showProfile = a => {
-        console.log("target: ", a);
+        // console.log("target: ", a);
         location.replace("/user/" + a);
     };
 
+    // console.log("my id!!! ", myId);
     return (
         <div className="chat-container">
             <div className="wrapper">
@@ -77,53 +78,64 @@ export function Chat({ myId }) {
                                 .map((message, index) => {
                                     return (
                                         <>
-                                            <div
-                                                className="messagecontainer"
-                                                key={index}
-                                            >
+                                            {message.id === myId && (
                                                 <div
-                                                    className="onlinepicturewrapper"
-                                                    style={{ width: "60px" }}
+                                                    className="messagecontainer"
+                                                    key={index}
                                                 >
-                                                    {message.picture_url && (
-                                                        <img
-                                                            src={
-                                                                message.picture_url
-                                                            }
-                                                            className="onlinepicture"
-                                                        />
-                                                    )}
-                                                    {!message.picture_url && (
-                                                        <img
-                                                            src="./default.jpg"
-                                                            className="onlinepicture"
-                                                        />
-                                                    )}
-                                                </div>
-
-                                                <div className="textcontainerinchat">
-                                                    <div className="firstlastinchat">
-                                                        <div className="firstlast">
-                                                            {message.first}
-                                                            &nbsp;
-                                                            {message.last}
-                                                        </div>
-                                                        {new Date(
-                                                            message.created_at
-                                                        ).toLocaleDateString(
-                                                            "en-US",
-                                                            {
-                                                                hour: "2-digit",
-                                                                minute:
-                                                                    "2-digit"
-                                                            }
+                                                    <div
+                                                        className="onlinepicturewrapper"
+                                                        style={{
+                                                            width: "60px"
+                                                        }}
+                                                    >
+                                                        {message.picture_url && (
+                                                            <img
+                                                                src={
+                                                                    message.picture_url
+                                                                }
+                                                                className="onlinepicture"
+                                                            />
+                                                        )}
+                                                        {!message.picture_url && (
+                                                            <img
+                                                                src="./default.jpg"
+                                                                className="onlinepicture"
+                                                            />
                                                         )}
                                                     </div>
-                                                    <div className="textinchat">
-                                                        {message.message}
+                                                    <div className="textchatwrapper">
+                                                        <div className="firstlastinchat">
+                                                            <div className="firstlast">
+                                                                {message.first}
+                                                                &nbsp;
+                                                                {message.last}
+                                                            </div>
+                                                        </div>
+                                                        <div className="textcontainerinchat">
+                                                            <div className="textinchat">
+                                                                <div className="date">
+                                                                    {new Date(
+                                                                        message.created_at
+                                                                    ).toLocaleDateString(
+                                                                        "en-US",
+                                                                        {
+                                                                            hour:
+                                                                                "2-digit",
+                                                                            minute:
+                                                                                "2-digit"
+                                                                        }
+                                                                    )}
+                                                                </div>
+
+                                                                {
+                                                                    message.message
+                                                                }
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            )}
                                         </>
                                     );
                                 })}

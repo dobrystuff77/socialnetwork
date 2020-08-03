@@ -130,7 +130,7 @@ export default class App extends React.Component {
                     <Route
                         exact
                         path="/chat"
-                        render={() => <Chat id={this.state.id} />}
+                        render={() => <Chat myId={this.state.id} />}
                     />
 
                     <div className="profile">

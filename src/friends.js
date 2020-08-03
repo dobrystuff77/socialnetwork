@@ -48,6 +48,9 @@ export default function Friends() {
                                             <div
                                                 key={user.id}
                                                 className="friendsmallbox"
+                                                onClick={() =>
+                                                    showProfile(user.id)
+                                                }
                                             >
                                                 {user.picture_url && (
                                                     <div className="userpicturetwo-container">
