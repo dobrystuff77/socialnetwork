@@ -746,7 +746,7 @@ textarea {
 
 .friends {
     width: 805px;
-    height: 200px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
