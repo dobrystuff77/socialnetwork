@@ -120,6 +120,11 @@ textarea {
     font-size: 14px;
 }
 
+.loginlink {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
 @media (max-width: 600px) {
     .simplenetwork {
         font-size: 51px;
@@ -724,6 +729,18 @@ textarea {
     font-size: 50px;
     text-align: center;
 }
+
+.friend-button {
+    background-color: black;
+    border: 0px solid transparent;
+    color: white;
+    border-radius: 15px;
+    font-size: 10px;
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-top: 5px;
+}
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* PICTURES IN PROFILE */
 /* SMALL PICTURES */
@@ -1176,13 +1193,14 @@ textarea {
 /* CHAT */
 
 .bigchatcontainer {
-    /* display: flex; */
+    display: flex;
     width: 100%;
     /* border: 2px solid yellow; */
     flex-direction: column;
     background-color: white;
     margin: 5px;
     align-items: center;
+    justify-content: center;
 }
 
 .chat-wrapper {
@@ -1230,7 +1248,7 @@ textarea {
 
 .margin-left {
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .chatpicture {
@@ -1290,7 +1308,7 @@ textarea {
 }
 
 .textarea-div {
-    width: 100%;
+    width: 70%;
     align-items: center;
     justify-content: center;
     /* border: 2px solid red; */

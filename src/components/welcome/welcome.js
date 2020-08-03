@@ -16,7 +16,11 @@ export default class Welcome extends React.Component {
             <HashRouter>
                 <div className="register-container">
                     <div className="treelogocontainer">
-                        <img src="network.svg" className="treelogo" />
+                        <img
+                            src="network.svg"
+                            className="treelogo"
+                            onClick={() => location.replace("/")}
+                        />
                     </div>
                     <div className="simplenetwork">simple network</div>
                     <div className="inputs">

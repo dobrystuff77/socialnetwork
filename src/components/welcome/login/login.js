@@ -31,7 +31,7 @@ export default function Login() {
             <button className="register-button" onClick={handleSubmit}>
                 submit
             </button>
-            <div className="register-button">
+            <div className="loginlink">
                 <Link to="/reset">reset password</Link>
             </div>
         </div>

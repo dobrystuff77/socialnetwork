@@ -79,7 +79,7 @@ export default class Registration extends React.Component {
                 >
                     register
                 </button>
-                <div className="register-button">
+                <div className="loginlink">
                     <Link to="/login">log in!</Link>
                 </div>
             </div>

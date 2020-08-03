@@ -85,11 +85,7 @@ export default function FriendButton(props) {
     console.log("friendOrNot.btnText: ", friendOrNot.btnText);
     return (
         <>
-            <button
-                className="register-button"
-                style={{ marginTop: "10px" }}
-                onClick={unfriendlyButton}
-            >
+            <button className="friend-button" onClick={unfriendlyButton}>
                 {friendOrNot.btnText}
             </button>
         </>
