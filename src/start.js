@@ -16,7 +16,7 @@ const store = createStore(
 );
 ////////////////////////////////////////////////////////////////////////////////
 import { init } from "./socket";
-//////////
+
 let elem;
 
 if (location.pathname == "/welcome") {
