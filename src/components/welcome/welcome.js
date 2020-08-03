@@ -3,9 +3,6 @@ import { HashRouter, Route } from "react-router-dom";
 import Login from "./login/login";
 import Registration from "./registration/registration";
 import Reset from "./reset/reset";
-// http://localhost:8080/#/
-// http://localhost:8080/#/login
-//exact zapobiega akceptowaniu wariacji url np /login/funkychicken
 
 export default class Welcome extends React.Component {
     constructor(props) {
@@ -33,5 +30,3 @@ export default class Welcome extends React.Component {
         );
     }
 }
-
-// <img src="logo.gif " className="biglogo" />;

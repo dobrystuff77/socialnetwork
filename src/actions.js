@@ -1,10 +1,6 @@
-import React from "react";
 import axios from "./axios";
 
 export async function getStatus() {
-    //axios request to server
-    //all action creaters will return object that have a type property
-
     const { data } = await axios.get("/friends-wonnabes");
     console.log("data from GET/friends-wonnabes: ", data);
 
@@ -15,9 +11,6 @@ export async function getStatus() {
 }
 
 export async function unfriend(user_id) {
-    //axios request to server    ff
-    //all action creaters will return object that have a type property
-
     const { data } = await axios.post("/cancel/" + user_id + ".json");
     console.log("data from POST/cancel/ ", data);
 
@@ -29,8 +22,6 @@ export async function unfriend(user_id) {
 
 export async function acceptFriend(user_id) {
     console.log("ACCEPT_FRIEND");
-    //axios request to server
-    //all action creaters will return object that have a type property
     const { data } = await axios.post("/update/" + user_id + ".json");
     console.log("data from POST/update/", data);
 
@@ -41,7 +32,7 @@ export async function acceptFriend(user_id) {
 }
 
 export async function chatMessages(messages) {
-    console.log("msg 3:", messages);
+    console.log("msg:", messages);
     return {
         type: "GET_MESSAGES",
         messages

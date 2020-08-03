@@ -167,12 +167,3 @@ export default class App extends React.Component {
         );
     }
 }
-
-// <a
-//     href="#"
-//     onClick={() =>
-//         location.replace("/pictures")
-//     }
-// >
-//     Pictures
-// </a>

@@ -1,14 +1,10 @@
 import React from "react";
 import BioEditor from "./bioeditor";
-import SmallPictures from "./smallpictures";
-import { Chat } from "./chat.js";
-import SmallFriends from "./smallfriends";
 
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        // console.log("bio!!!!!: ", props.bio);
     }
 
     render() {
@@ -38,13 +34,7 @@ export default class Profile extends React.Component {
                         />
                     </div>
                 </div>
-
-                {/*<SmallPictures />*/}
-                {/*<Chat />*/}
-                {/*<SmallFriends />*/}
             </React.Fragment>
         );
     }
 }
-
-// <img src="logo.gif " className="biglogo" />;

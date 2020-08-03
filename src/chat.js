@@ -6,22 +6,13 @@ import axios from "./axios";
 export function Chat({ myId }) {
     const chatMessages = useSelector(state => state && state.chatMessages);
     const usersOnline = useSelector(state => state && state.online);
-
-    // console.log("usersOnline in chat.js: ", usersOnline);
-    // console.log("chatMessages: ", chatMessages);
-
     const elemRef = useRef();
     const [myIdState, setMyState] = useState(myId);
 
     useEffect(() => {
-        // console.log("Chat working");
         let { clientHeight, scrollTop, scrollHeight } = elemRef.current;
         elemRef.current.scrollTop = scrollHeight - clientHeight;
     }, [chatMessages]);
-
-    useEffect(() => {
-        // console.log("!!!!!!!!", usersOnline && usersOnline.lenght);
-    }, [usersOnline]);
 
     const keyCheck = e => {
         if (e.key === "Enter") {
@@ -31,11 +22,9 @@ export function Chat({ myId }) {
         }
     };
     const showProfile = a => {
-        // console.log("target: ", a);
         location.replace("/user/" + a);
     };
 
-    console.log("my id!!! ", myId);
     return (
         <div className="chat-container">
             <div className="wrapper">

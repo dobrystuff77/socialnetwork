@@ -1204,7 +1204,7 @@ textarea {
 }
 
 .chat-wrapper {
-    width: 100%;
+    max-width: 600px;
     height: 56vh;
     overflow-y: scroll;
     /* overflow-x: scroll; */

@@ -18,15 +18,11 @@ export default function Friends() {
             state.friendsWannabes.filter(friend => !friend.accepted).slice(0, 6)
     );
 
-    console.log("acceptedFriends: ", acceptedFriends);
-    console.log("friendsWannabes: ", friendsWannabes);
-
     useEffect(() => {
         dispatch(getStatus());
     }, []);
 
     const showProfile = a => {
-        console.log("target: ", a);
         location.replace("/user/" + a);
     };
 
@@ -48,12 +44,14 @@ export default function Friends() {
                                             <div
                                                 key={user.id}
                                                 className="friendsmallbox"
-                                                onClick={() =>
-                                                    showProfile(user.id)
-                                                }
                                             >
                                                 {user.picture_url && (
-                                                    <div className="userpicturetwo-container">
+                                                    <div
+                                                        className="userpicturetwo-container"
+                                                        onClick={() =>
+                                                            showProfile(user.id)
+                                                        }
+                                                    >
                                                         <img
                                                             src={
                                                                 user.picture_url
@@ -64,7 +62,14 @@ export default function Friends() {
                                                 )}
                                                 {!user.picture_url && (
                                                     <>
-                                                        <div className="userpicturetwo-container">
+                                                        <div
+                                                            className="userpicturetwo-container"
+                                                            onClick={() =>
+                                                                showProfile(
+                                                                    user.id
+                                                                )
+                                                            }
+                                                        >
                                                             <img
                                                                 src="./default.jpg"
                                                                 className="userpicturetwo"
@@ -122,7 +127,14 @@ export default function Friends() {
                                             >
                                                 {user.picture_url && (
                                                     <>
-                                                        <div className="userpicturetwo-container">
+                                                        <div
+                                                            className="userpicturetwo-container"
+                                                            onClick={() =>
+                                                                showProfile(
+                                                                    user.id
+                                                                )
+                                                            }
+                                                        >
                                                             <img
                                                                 src={
                                                                     user.picture_url
@@ -134,7 +146,14 @@ export default function Friends() {
                                                 )}
                                                 {!user.picture_url && (
                                                     <>
-                                                        <div className="userpicturetwo-container">
+                                                        <div
+                                                            className="userpicturetwo-container"
+                                                            onClick={() =>
+                                                                showProfile(
+                                                                    user.id
+                                                                )
+                                                            }
+                                                        >
                                                             <img
                                                                 src="./default.jpg"
                                                                 className="userpicturetwo"

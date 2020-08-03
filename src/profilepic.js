@@ -8,10 +8,6 @@ export default class ProfilePic extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        // console.log("bio!!!!!: ", props.bio);
-        // console.log("props in profilePic: ", props);
-        // console.log("props.first: ", props.first);
-        // console.log("props.first: ", props.last);
     }
     backToProfile() {
         location.replace("/");
@@ -20,8 +16,6 @@ export default class ProfilePic extends React.Component {
     render() {
         return (
             <>
-                {/*<div className="flexpic">*/}
-
                 <div className="flex">
                     {this.props.picture_url && (
                         <div className="profilepic-container">
@@ -50,8 +44,6 @@ export default class ProfilePic extends React.Component {
                         {this.props.first}
                     </a>
                 </div>
-
-                {/*</div>*/}
             </>
         );
     }

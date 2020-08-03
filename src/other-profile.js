@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "./axios";
 import FriendButton from "./friendbutton";
-import SmallPicturesUser from "./smallpicturesuser";
 
 export class OtherProfile extends React.Component {
     constructor() {
@@ -10,31 +9,16 @@ export class OtherProfile extends React.Component {
     }
 
     componentDidMount() {
-        //where we want to make a request to the server to get all the info about the requested user..
-        // console.log("this.props.matchparams.id: ", this.props.match.params.id);
-        // sprawdzam czy id requestu zgadza sie z id obecnie zalogowanego w froncie oczywiscie server wysyla wszystkie info ktorych potrzebuje
-        //jezeli ids sa to same odsylam do /
         axios
             .get("/user/" + this.props.match.params.id + ".json")
-            .then(
-                ({ data }) => {
-                    // console.log("axios /user/:id respond:", data);
-                    if (this.props.match.params.id == data.userId) {
-                        // console.log("data.userId:", data.userId);
-                        // console.log(
-                        //     "this.props.match.params.id:",
-                        //     this.props.match.params.id
-                        // );
-                        this.props.history.push("/");
-                    } else {
-                        this.setState(data);
-                    }
-                } //wsadzam odp do state
-            )
+            .then(({ data }) => {
+                if (this.props.match.params.id == data.userId) {
+                    this.props.history.push("/");
+                } else {
+                    this.setState(data);
+                }
+            })
             .catch("err in axios GET/user/:id");
-        // demo!!!
-
-        //we want to redirect if the user doesn exist...
     }
 
     render() {
@@ -86,7 +70,6 @@ export class OtherProfile extends React.Component {
                                 recipient_id={this.props.match.params.id}
                             />
                         </div>
-                        {/*<SmallPicturesUser id={this.props.match.params.id} />*/}
                     </div>
                 )}
 

@@ -8,17 +8,11 @@ export default class Registration extends React.Component {
         this.state = {};
     }
     handleChange(e) {
-        // to samo inaczej this[e.target.name] = e.target.value;
-        // console.log("e.target.name: ", e.target.name);
-        // console.log("e.target.value: ", e.target.value);
         this.setState({
             [e.target.name]: e.target.value
         });
-
-        // console.log("this.state: ", this.state);
     } ///
     submit() {
-        //inaczej axios.post("/register", this.state);
         console.log(
             this.state.first,
             this.state.last,
@@ -63,6 +57,7 @@ export default class Registration extends React.Component {
                     placeholder="last"
                 />
                 <input
+                    type="email"
                     name="email"
                     onChange={e => this.handleChange(e)}
                     placeholder="email"
