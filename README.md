@@ -20,7 +20,7 @@ Node.js, Express.js, PostgreSQL, AWS S3 for storing pictures with reference in d
 
 ### Features
 
-Register
+Create account
 
 ![img](./images_readme/1.png)
 
