@@ -14,7 +14,7 @@ HTML/CSS, React.js
 
 ### Backend
 
-Node.js, Express.js, PostgreSQL, AWS S3 for storing pictures with reference in database, passwords are salted-hashed and encrypted with Node and Bcrypt, Cookie Session takes care about already logged in user. Page is protected from SQL injections and CSURF attacks, Socket.io protocol for chat feature
+Node.js, Express.js, PostgreSQL, AWS S3 for storing pictures with reference in database, passwords are salted-hashed and encrypted with Node and Bcrypt, Cookie Session takes care about already logged in user, page is protected from SQL injections and CSURF attacks, Socket.io protocol for chat feature
 
 ---
 
