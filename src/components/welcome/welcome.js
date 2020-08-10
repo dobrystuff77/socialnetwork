@@ -19,7 +19,7 @@ export default class Welcome extends React.Component {
                             onClick={() => location.replace("/")}
                         />
                     </div>
-                    <div className="simplenetwork">simple network 77</div>
+                    <div className="simplenetwork">simplenetwork77</div>
                     <div className="inputs">
                         <Route exact path="/" component={Registration} />
                         <Route exact path="/login" component={Login} />
