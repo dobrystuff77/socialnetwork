@@ -28,6 +28,10 @@ Logged in user profile page
 
 ![img](./images_readme/2.png)
 
+Edit user profile
+
+![img](./images_readme/22.png)
+
 Upload profile picture
 
 ![img](./images_readme/3.png)
