@@ -42,7 +42,7 @@ app.use(express.static("./sql"));
 
 const cookieSessionMiddleware = cookieSession({
     secret: `secrets`,
-    maxAge: 1000 * 60 * 60 * 24 * 90
+    maxAge: 24 * 60 * 60 * 1000
 });
 
 app.use(cookieSessionMiddleware);
