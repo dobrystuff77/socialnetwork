@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "../../../axios"; // ./ oznacza ze importuje kopie axiosa czesto sie o tym zapomina
+import axios from "../../../axios"; 
 import { Link } from "react-router-dom";
 
 export default class Registration extends React.Component {
@@ -39,7 +39,7 @@ export default class Registration extends React.Component {
                 }
             });
     }
-    
+
     render() {
         return (
             <div className="container">
