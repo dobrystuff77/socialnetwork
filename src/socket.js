@@ -9,17 +9,13 @@ export const init = store => {
 
         socket.on("newmessage", message => {
             store.dispatch(newMessage(message));
-            // console.log("message:", message);
         });
 
         socket.on("getMessages", messages => {
-            // console.log("msg 2:", messages);
             store.dispatch(chatMessages(messages));
         });
 
         socket.on("usersOnline", result => {
-            console.log("usersOnline!!!:", result);
-            // store.dispatch(chatMessages(messages));
             store.dispatch(usersOnline(result));
         });
     }

@@ -91,4 +91,4 @@ export default class Uploader extends React.Component {
     }
 }
 
-//                console.log("formData: ", formData); // to jest pusty obj nic szegolnego
+

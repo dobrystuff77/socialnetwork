@@ -7,11 +7,13 @@ export default class Registration extends React.Component {
         super(props);
         this.state = {};
     }
+
     handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         });
-    } ///
+    } 
+
     submit() {
         console.log(
             this.state.first,
@@ -27,14 +29,9 @@ export default class Registration extends React.Component {
                 password: this.state.password
             })
             .then(data => {
-                console.log("data in axios post: ", data);
-                console.log("data.data.success: ", data.data.success);
                 if (data.data.success) {
-                    //it worked
-                    console.log("added user succes: true");
                     location.replace("/");
                 } else {
-                    // failure!
                     console.log("no added user succes: false");
                     this.setState({
                         error: true
@@ -42,6 +39,7 @@ export default class Registration extends React.Component {
                 }
             });
     }
+    
     render() {
         return (
             <div className="container">
