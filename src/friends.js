@@ -39,7 +39,7 @@ export default function Friends() {
                             </div>
                         )}
                         <div className="infriends">
-                            {friendsWannabes ? (
+                            {friendsWannabes && friendsWannabes.length > 0 ? (
                                 friendsWannabes.map((user, index) => {
                                     return (
                                         <>
@@ -113,7 +113,9 @@ export default function Friends() {
                                     );
                                 })
                             ) : (
-                                <>No Wannabes yet</>
+                                <div className={"text-info"}>
+                                    No Wannabes yet
+                                </div>
                             )}
                         </div>
                     </div>
@@ -122,7 +124,7 @@ export default function Friends() {
                             <div className="picturesoptions">Friends</div>
                         </div>
                         <div className="infriends">
-                            {acceptedFriends ? (
+                            {acceptedFriends && acceptedFriends.length > 0 ? (
                                 acceptedFriends.map((user, index) => {
                                     return (
                                         <>
@@ -184,7 +186,9 @@ export default function Friends() {
                                     );
                                 })
                             ) : (
-                                <>No Friends yet</>
+                                <div className={"text-info"}>
+                                    No Friends yet
+                                </div>
                             )}
                         </div>
                     </div>

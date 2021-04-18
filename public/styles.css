@@ -28,10 +28,6 @@ textarea {
     margin-right: 5px;
 }
 
-.loading-big {
-    width: 300px;
-    height: 300px;
-}
 
 /* REGISTER */
 .register-container {
@@ -59,12 +55,10 @@ textarea {
 }
 .treelogo {
     width: 120px;
-
     object-fit: contain;
 }
 .container {
     width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -72,7 +66,6 @@ textarea {
 }
 .inputs {
     width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,21 +124,12 @@ textarea {
     margin-bottom: 10px;
     text-align: center;
 }
-.resetinputs {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
 
 .link {
     justify-content: center;
     align-items: center;
 }
 
-/* LOGIN */
-.links {
-    text-align: center;
-}
 
 /* LOGGED IN */
 .header {
@@ -176,13 +160,6 @@ textarea {
     height: 35px;
     object-fit: contain;
     margin-bottom: 5px;
-}
-
-.smallwetreenow {
-    display: flex;
-    align-items: center;
-
-    font-size: 20px;
 }
 
 .header-icons-container {
@@ -266,59 +243,6 @@ textarea {
     }
 }
 
-.firstlastheader {
-    width: 65px;
-    height: 60%;
-    color: #222;
-    font-weight: bold;
-    margin-right: 7px;
-    padding-right: 7px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    border-right: 2px solid #8cc63e;
-    border-right: 2px solid #dedfe0;
-    font-family: Segoe UI;
-}
-
-.logout {
-    width: 65px;
-    height: 60%;
-    color: #222;
-    font-weight: bold;
-    margin-right: 7px;
-    padding-right: 7px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-family: Segoe UI;
-}
-
-
-.pureflex:hover .arrcontainer {
-    background-color: transparent;
-}
-
-.pureflex {
-    display: flex;
-    position: relative;
-    height: 100%;
-}
-
-.arrcontainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 40px;
-}
-
-.arrdown {
-    margin-top: 5px;
-    width: 10px;
-    cursor: pointer;
-}
-
 .justflex {
     display: flex;
     align-items: center;
@@ -330,6 +254,7 @@ textarea {
     width: 20px;
     margin-right: 5px;
 }
+
 .biocontainer {
     display: flex;
     width: 100%;
@@ -358,6 +283,7 @@ textarea {
     width: 100%;
     word-wrap: break-word;
 }
+
 .editbiocontainer {
     display: flex;
     width: 90%;
@@ -370,13 +296,6 @@ textarea {
     display: flex;
 }
 
-.editcontainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-}
 
 .edit {
     margin-top: 5px;
@@ -449,7 +368,6 @@ textarea {
     height: 100%;
     background-color: white;
     object-fit: cover;
-
     cursor: pointer;
 }
 
@@ -457,19 +375,10 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-weight: bold;
     background-color: white;
-
     width: 100%;
     height: 50px;
-}
-
-.flexpic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60%;
 }
 
 
@@ -481,7 +390,6 @@ textarea {
     align-items: center;
     position: fixed;
     flex-direction: column;
-
     top: 0;
     bottom: 0px;
     left: 0px;
@@ -493,7 +401,6 @@ textarea {
     height: 150px;
     border-radius: 10px;
     background-color: white;
-
     margin-top: 40px;
     position: relative;
     display: flex;
@@ -511,7 +418,6 @@ textarea {
 /* Upload button */
 .upload-btn-wrapper {
     position: relative;
-
     display: inline-block;
 }
 
@@ -537,7 +443,6 @@ textarea {
 .close {
     top: 40px;
     left: 135px;
-
     position: absolute;
     width: 32px;
     height: 32px;
@@ -563,9 +468,11 @@ textarea {
     width: 2px;
     background-color: white;
 }
+
 .close:before {
     transform: rotate(-45deg);
 }
+
 .close:after {
     transform: rotate(45deg);
 }
@@ -577,7 +484,6 @@ textarea {
     align-items: center;
     width: 100%;
     height: 90vh;
-
     font-size: 50px;
     text-align: center;
 }
@@ -594,7 +500,7 @@ textarea {
     margin-top: 5px;
 }
 
-/* //ALL USERS */
+/* ALL USERS */
 .usersmaincontainer {
     display: flex;
     min-height: 100vh;
@@ -603,21 +509,21 @@ textarea {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-
     flex-direction: column;
     min-height: 90vh;
 }
+
 .usersinput {
     width: 150px;
     margin-top: 28px;
 }
+
 .lastadded {
     display: flex;
     margin-top: 7px;
     font-size: 15px;
     width: 100%;
     height: 25px;
-
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
@@ -631,24 +537,6 @@ textarea {
     width: 705px;
 }
 
-.usersmallbox {
-    width: 204px;
-    height: 237px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5px;
-    cursor: pointer;
-}
-
-.userpicture-container {
-    width: 180px;
-    height: 180px;
-    border-radius: 150px;
-    overflow: hidden;
-}
-
 .userpicture {
     width: 100%;
     height: 100%;
@@ -656,18 +544,14 @@ textarea {
     object-fit: cover;
 }
 
-.usersfirstlast {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 35px;
-    font-weight: bold;
-    margin-top: 10px;
-    background-color: white;
+/* FRIENDS */
+
+.text-info {
+    font-size: 13px;
+    opacity: 0.8;
+    margin: 50px;
 }
 
-/* FRIENDS */
 .friendscontainer {
     display: flex;
     flex-direction: column;
@@ -711,16 +595,6 @@ textarea {
     }
 }
 
-.wonnabes {
-    background-color: #8cc63e1f;
-    width: 50%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5px;
-}
 
 .friendsmallbox {
     width: 110px;
@@ -813,16 +687,13 @@ textarea {
 }
 
 /* Hide scrollbar for IE and Edge */
-
 .onlineuser {
     display: inline-block;
-
     width: 70px;
     height: 70px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-
     background-color: white;
     position: relative;
 }
@@ -840,7 +711,6 @@ textarea {
 .onlinepicture {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -855,10 +725,6 @@ textarea {
     position: absolute;
 }
 
-.onlinefirstlast {
-    font-size: 13px;
-    font-weight: bold;
-}
 
 .textinchat {
     width: 100%;
@@ -874,7 +740,6 @@ textarea {
 .bigchatcontainer {
     display: flex;
     width: 100%;
-
     flex-direction: column;
     background-color: white;
     margin: 5px;
@@ -886,7 +751,6 @@ textarea {
     width: 600px;
     height: 52vh;
     overflow-y: scroll;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -920,17 +784,6 @@ textarea {
     margin-right: 5px;
 }
 
-.chatpicture {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border: 2px solid green;
-}
-.containerchatpicture {
-    display: flex;
-    border: 1px solid black;
-}
-
 .firstlastinchat {
     font-weight: bold;
     margin-top: 5px;
@@ -942,9 +795,7 @@ textarea {
 .firstlast {
     font-weight: bold;
     margin-right: 10px;
-
     font-size: 13px;
-
     display: inline-block;
 }
 
@@ -963,7 +814,6 @@ textarea {
     width: 100%;
     flex-direction: column;
     align-items: center;
-
     margin-left: 5px;
     display: inline-block;
 }
@@ -972,7 +822,6 @@ textarea {
     width: 70%;
     align-items: center;
     justify-content: center;
-
     padding-left: 5px;
     padding-right: 5px;
 }
