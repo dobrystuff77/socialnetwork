@@ -547,9 +547,9 @@ textarea {
 /* FRIENDS */
 
 .text-info {
-    font-size: 13px;
-    opacity: 0.8;
-    margin: 50px;
+    font-size: 10px;
+    opacity: 0.6;
+    margin: 10px;
 }
 
 .friendscontainer {
