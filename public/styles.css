@@ -720,7 +720,6 @@ textarea {
     justify-content: center;
     align-items: center;
     padding-top: 5px;
-    background-color: ;
 }
 
 .friendsmallbox {
@@ -904,7 +903,6 @@ textarea {
 }
 
 .messagecontainer {
-    background: aqamarine;
     width: 100%;
     display: inline-flex;
     margin-bottom: 10px;
