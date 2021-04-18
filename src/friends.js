@@ -7,22 +7,24 @@ export default function Friends() {
     const dispatch = useDispatch();
 
     const acceptedFriends = useSelector(
-        state =>
+        (state) =>
             state.friendsWannabes &&
-            state.friendsWannabes.filter(friend => friend.accepted)
+            state.friendsWannabes.filter((friend) => friend.accepted)
     );
 
     const friendsWannabes = useSelector(
-        state =>
+        (state) =>
             state.friendsWannabes &&
-            state.friendsWannabes.filter(friend => !friend.accepted).slice(0, 6)
+            state.friendsWannabes
+                .filter((friend) => !friend.accepted)
+                .slice(0, 6)
     );
 
     useEffect(() => {
         dispatch(getStatus());
     }, []);
 
-    const showProfile = a => {
+    const showProfile = (a) => {
         location.replace("/user/" + a);
     };
 
@@ -37,7 +39,7 @@ export default function Friends() {
                             </div>
                         )}
                         <div className="infriends">
-                            {friendsWannabes &&
+                            {friendsWannabes ? (
                                 friendsWannabes.map((user, index) => {
                                     return (
                                         <>
@@ -83,7 +85,7 @@ export default function Friends() {
                                                 <div className="button-container">
                                                     <button
                                                         className="friendbutton"
-                                                        onClick={e =>
+                                                        onClick={(e) =>
                                                             dispatch(
                                                                 acceptFriend(
                                                                     user.id
@@ -95,7 +97,7 @@ export default function Friends() {
                                                     </button>
                                                     <button
                                                         className="friendbutton"
-                                                        onClick={e =>
+                                                        onClick={(e) =>
                                                             dispatch(
                                                                 unfriend(
                                                                     user.id
@@ -109,7 +111,10 @@ export default function Friends() {
                                             </div>
                                         </>
                                     );
-                                })}
+                                })
+                            ) : (
+                                <>No Wannabes yet</>
+                            )}
                         </div>
                     </div>
                     <div className="friends">
@@ -117,7 +122,7 @@ export default function Friends() {
                             <div className="picturesoptions">Friends</div>
                         </div>
                         <div className="infriends">
-                            {acceptedFriends &&
+                            {acceptedFriends ? (
                                 acceptedFriends.map((user, index) => {
                                     return (
                                         <>
@@ -166,7 +171,7 @@ export default function Friends() {
                                                 </div>
                                                 <button
                                                     className="friendbutton"
-                                                    onClick={e =>
+                                                    onClick={(e) =>
                                                         dispatch(
                                                             unfriend(user.id)
                                                         )
@@ -177,7 +182,10 @@ export default function Friends() {
                                             </div>
                                         </>
                                     );
-                                })}
+                                })
+                            ) : (
+                                <>No Friends yet</>
+                            )}
                         </div>
                     </div>
                 </div>
